@@ -1,0 +1,278 @@
+{
+  "meta": {
+    "source": "entsoe-pipeline/reference_table_DEU.csv",
+    "zone": "DE_LU"
+  },
+  "years": [
+    {
+      "year": 2000,
+      "renewable_penetration_pct": 6.22,
+      "negative_price_hours": null,
+      "negative_price_hours_pct": null,
+      "solar_mvf": null,
+      "wind_onshore_mvf": null,
+      "wind_offshore_mvf": null,
+      "price_completeness_flag": null
+    },
+    {
+      "year": 2001,
+      "renewable_penetration_pct": 6.55,
+      "negative_price_hours": null,
+      "negative_price_hours_pct": null,
+      "solar_mvf": null,
+      "wind_onshore_mvf": null,
+      "wind_offshore_mvf": null,
+      "price_completeness_flag": null
+    },
+    {
+      "year": 2002,
+      "renewable_penetration_pct": 7.62,
+      "negative_price_hours": null,
+      "negative_price_hours_pct": null,
+      "solar_mvf": null,
+      "wind_onshore_mvf": null,
+      "wind_offshore_mvf": null,
+      "price_completeness_flag": null
+    },
+    {
+      "year": 2003,
+      "renewable_penetration_pct": 7.75,
+      "negative_price_hours": null,
+      "negative_price_hours_pct": null,
+      "solar_mvf": null,
+      "wind_onshore_mvf": null,
+      "wind_offshore_mvf": null,
+      "price_completeness_flag": null
+    },
+    {
+      "year": 2004,
+      "renewable_penetration_pct": 9.51,
+      "negative_price_hours": null,
+      "negative_price_hours_pct": null,
+      "solar_mvf": null,
+      "wind_onshore_mvf": null,
+      "wind_offshore_mvf": null,
+      "price_completeness_flag": null
+    },
+    {
+      "year": 2005,
+      "renewable_penetration_pct": 10.34,
+      "negative_price_hours": null,
+      "negative_price_hours_pct": null,
+      "solar_mvf": null,
+      "wind_onshore_mvf": null,
+      "wind_offshore_mvf": null,
+      "price_completeness_flag": null
+    },
+    {
+      "year": 2006,
+      "renewable_penetration_pct": 11.52,
+      "negative_price_hours": null,
+      "negative_price_hours_pct": null,
+      "solar_mvf": null,
+      "wind_onshore_mvf": null,
+      "wind_offshore_mvf": null,
+      "price_completeness_flag": null
+    },
+    {
+      "year": 2007,
+      "renewable_penetration_pct": 14.17,
+      "negative_price_hours": null,
+      "negative_price_hours_pct": null,
+      "solar_mvf": null,
+      "wind_onshore_mvf": null,
+      "wind_offshore_mvf": null,
+      "price_completeness_flag": null
+    },
+    {
+      "year": 2008,
+      "renewable_penetration_pct": 14.91,
+      "negative_price_hours": null,
+      "negative_price_hours_pct": null,
+      "solar_mvf": null,
+      "wind_onshore_mvf": null,
+      "wind_offshore_mvf": null,
+      "price_completeness_flag": null
+    },
+    {
+      "year": 2009,
+      "renewable_penetration_pct": 16.33,
+      "negative_price_hours": null,
+      "negative_price_hours_pct": null,
+      "solar_mvf": null,
+      "wind_onshore_mvf": null,
+      "wind_offshore_mvf": null,
+      "price_completeness_flag": null
+    },
+    {
+      "year": 2010,
+      "renewable_penetration_pct": 16.89,
+      "negative_price_hours": null,
+      "negative_price_hours_pct": null,
+      "solar_mvf": null,
+      "wind_onshore_mvf": null,
+      "wind_offshore_mvf": null,
+      "price_completeness_flag": null
+    },
+    {
+      "year": 2011,
+      "renewable_penetration_pct": 20.56,
+      "negative_price_hours": null,
+      "negative_price_hours_pct": null,
+      "solar_mvf": null,
+      "wind_onshore_mvf": null,
+      "wind_offshore_mvf": null,
+      "price_completeness_flag": null
+    },
+    {
+      "year": 2012,
+      "renewable_penetration_pct": 23.13,
+      "negative_price_hours": null,
+      "negative_price_hours_pct": null,
+      "solar_mvf": null,
+      "wind_onshore_mvf": null,
+      "wind_offshore_mvf": null,
+      "price_completeness_flag": null
+    },
+    {
+      "year": 2013,
+      "renewable_penetration_pct": 24.13,
+      "negative_price_hours": null,
+      "negative_price_hours_pct": null,
+      "solar_mvf": null,
+      "wind_onshore_mvf": null,
+      "wind_offshore_mvf": null,
+      "price_completeness_flag": null
+    },
+    {
+      "year": 2014,
+      "renewable_penetration_pct": 26.17,
+      "negative_price_hours": null,
+      "negative_price_hours_pct": null,
+      "solar_mvf": null,
+      "wind_onshore_mvf": null,
+      "wind_offshore_mvf": null,
+      "price_completeness_flag": null
+    },
+    {
+      "year": 2015,
+      "renewable_penetration_pct": 29.43,
+      "negative_price_hours": null,
+      "negative_price_hours_pct": null,
+      "solar_mvf": null,
+      "wind_onshore_mvf": null,
+      "wind_offshore_mvf": null,
+      "price_completeness_flag": null
+    },
+    {
+      "year": 2016,
+      "renewable_penetration_pct": 29.48,
+      "negative_price_hours": null,
+      "negative_price_hours_pct": null,
+      "solar_mvf": null,
+      "wind_onshore_mvf": null,
+      "wind_offshore_mvf": null,
+      "price_completeness_flag": null
+    },
+    {
+      "year": 2017,
+      "renewable_penetration_pct": 33.46,
+      "negative_price_hours": null,
+      "negative_price_hours_pct": null,
+      "solar_mvf": null,
+      "wind_onshore_mvf": null,
+      "wind_offshore_mvf": null,
+      "price_completeness_flag": null
+    },
+    {
+      "year": 2018,
+      "renewable_penetration_pct": 35.26,
+      "negative_price_hours": 27.0,
+      "negative_price_hours_pct": 0.31,
+      "solar_mvf": 1.0514,
+      "wind_onshore_mvf": 0.8462,
+      "wind_offshore_mvf": 0.9345,
+      "price_completeness_flag": "INCOMPLETE (2209/8760 hours, 25.2% coverage)"
+    },
+    {
+      "year": 2019,
+      "renewable_penetration_pct": 40.19,
+      "negative_price_hours": 211.0,
+      "negative_price_hours_pct": 2.41,
+      "solar_mvf": 0.9267,
+      "wind_onshore_mvf": 0.858,
+      "wind_offshore_mvf": 0.9227,
+      "price_completeness_flag": "ok"
+    },
+    {
+      "year": 2020,
+      "renewable_penetration_pct": 44.37,
+      "negative_price_hours": 298.0,
+      "negative_price_hours_pct": 3.39,
+      "solar_mvf": 0.8044,
+      "wind_onshore_mvf": 0.8066,
+      "wind_offshore_mvf": 0.9138,
+      "price_completeness_flag": "ok"
+    },
+    {
+      "year": 2021,
+      "renewable_penetration_pct": 40.16,
+      "negative_price_hours": 139.0,
+      "negative_price_hours_pct": 1.59,
+      "solar_mvf": 0.779,
+      "wind_onshore_mvf": 0.8338,
+      "wind_offshore_mvf": 0.9537,
+      "price_completeness_flag": "ok"
+    },
+    {
+      "year": 2022,
+      "renewable_penetration_pct": 44.38,
+      "negative_price_hours": 68.0,
+      "negative_price_hours_pct": 0.78,
+      "solar_mvf": 0.9439,
+      "wind_onshore_mvf": 0.7151,
+      "wind_offshore_mvf": 0.826,
+      "price_completeness_flag": "ok"
+    },
+    {
+      "year": 2023,
+      "renewable_penetration_pct": 54.69,
+      "negative_price_hours": 301.0,
+      "negative_price_hours_pct": 3.44,
+      "solar_mvf": 0.7584,
+      "wind_onshore_mvf": 0.8257,
+      "wind_offshore_mvf": 0.9096,
+      "price_completeness_flag": "ok"
+    },
+    {
+      "year": 2024,
+      "renewable_penetration_pct": 58.64,
+      "negative_price_hours": 457.0,
+      "negative_price_hours_pct": 5.2,
+      "solar_mvf": 0.5888,
+      "wind_onshore_mvf": 0.8222,
+      "wind_offshore_mvf": 0.9094,
+      "price_completeness_flag": "ok"
+    },
+    {
+      "year": 2025,
+      "renewable_penetration_pct": 59.1,
+      "negative_price_hours": 576.0,
+      "negative_price_hours_pct": 6.58,
+      "solar_mvf": 0.5156,
+      "wind_onshore_mvf": 0.8659,
+      "wind_offshore_mvf": 0.9576,
+      "price_completeness_flag": "ok"
+    },
+    {
+      "year": 2026,
+      "renewable_penetration_pct": null,
+      "negative_price_hours": 372.0,
+      "negative_price_hours_pct": 4.25,
+      "solar_mvf": 0.5031,
+      "wind_onshore_mvf": 0.8886,
+      "wind_offshore_mvf": 0.953,
+      "price_completeness_flag": "INCOMPLETE (4992/8760 hours, 57.0% coverage)"
+    }
+  ]
+}

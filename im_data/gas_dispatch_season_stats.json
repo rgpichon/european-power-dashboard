@@ -1,0 +1,317 @@
+{
+  "meta": {
+    "srmc_source": "seasonal_commodity_means.json",
+    "srmc_formula": "TTF_season/0.58 + EUA_annual\u00d70.348207",
+    "dispatch_rule": "hour counts if DA_price >= year-season SRMC; spread = mean(DA \u2212 SRMC) on those hours only",
+    "gross_margin_eur_per_mw": "dispatch_hours \u00d7 avg_spread (\u20ac per MW of capacity for that season)",
+    "base_case_years": [
+      2019,
+      2023,
+      2024,
+      2025
+    ],
+    "base_case_note": "Equal-weight mean across clean years 2019/2023/2024/2025. 2025 also reported alone as low-wind/high-dispatch atypical year for plant-model sensitivity.",
+    "price_source": "ENTSO-E DE_LU / DE_AT_LU day-ahead hourly"
+  },
+  "srmc_by_year_season": {
+    "2019": {
+      "DJF": 40.3321,
+      "MAM": 34.1921,
+      "JJA": 28.1319,
+      "SON": 34.7235
+    },
+    "2023": {
+      "DJF": 118.331,
+      "MAM": 96.874,
+      "JJA": 85.3698,
+      "SON": 104.1622
+    },
+    "2024": {
+      "DJF": 80.6577,
+      "MAM": 73.7975,
+      "JJA": 83.668,
+      "SON": 92.8772
+    },
+    "2025": {
+      "DJF": 98.3417,
+      "MAM": 90.3781,
+      "JJA": 85.194,
+      "SON": 80.5323
+    }
+  },
+  "by_year": [
+    {
+      "year": 2019,
+      "season": "DJF",
+      "srmc": 40.332082705334486,
+      "n_hours_in_season": 2159,
+      "dispatch_hours": 1208,
+      "dispatch_share": 0.5595182955071792,
+      "avg_spread_eur_mwh": 12.868124248307899,
+      "gross_margin_eur_per_mw": 15544.694091955942
+    },
+    {
+      "year": 2019,
+      "season": "MAM",
+      "srmc": 34.192082705334485,
+      "n_hours_in_season": 2207,
+      "dispatch_hours": 1447,
+      "dispatch_share": 0.6556411418214771,
+      "avg_spread_eur_mwh": 8.142699602889426,
+      "gross_margin_eur_per_mw": 11782.486325381
+    },
+    {
+      "year": 2019,
+      "season": "JJA",
+      "srmc": 28.13191029154138,
+      "n_hours_in_season": 2208,
+      "dispatch_hours": 1860,
+      "dispatch_share": 0.842391304347826,
+      "avg_spread_eur_mwh": 12.03383164394249,
+      "gross_margin_eur_per_mw": 22382.92685773303
+    },
+    {
+      "year": 2019,
+      "season": "SON",
+      "srmc": 34.72346201567931,
+      "n_hours_in_season": 2185,
+      "dispatch_hours": 1346,
+      "dispatch_share": 0.6160183066361556,
+      "avg_spread_eur_mwh": 10.463588504380125,
+      "gross_margin_eur_per_mw": 14083.990126895647
+    },
+    {
+      "year": 2023,
+      "season": "DJF",
+      "srmc": 118.33102755145518,
+      "n_hours_in_season": 2159,
+      "dispatch_hours": 938,
+      "dispatch_share": 0.4344603983325614,
+      "avg_spread_eur_mwh": 35.71311957008,
+      "gross_margin_eur_per_mw": 33498.90615673504
+    },
+    {
+      "year": 2023,
+      "season": "MAM",
+      "srmc": 96.87395858593793,
+      "n_hours_in_season": 2207,
+      "dispatch_hours": 1205,
+      "dispatch_share": 0.5459900317172632,
+      "avg_spread_eur_mwh": 24.325734360120162,
+      "gross_margin_eur_per_mw": 29312.509903944796
+    },
+    {
+      "year": 2023,
+      "season": "JJA",
+      "srmc": 85.36982065490345,
+      "n_hours_in_season": 2208,
+      "dispatch_hours": 1417,
+      "dispatch_share": 0.6417572463768116,
+      "avg_spread_eur_mwh": 26.846453163021746,
+      "gross_margin_eur_per_mw": 38041.42413200181
+    },
+    {
+      "year": 2023,
+      "season": "SON",
+      "srmc": 104.1622344480069,
+      "n_hours_in_season": 2185,
+      "dispatch_hours": 828,
+      "dispatch_share": 0.37894736842105264,
+      "avg_spread_eur_mwh": 29.85159405440856,
+      "gross_margin_eur_per_mw": 24717.11987705029
+    },
+    {
+      "year": 2024,
+      "season": "DJF",
+      "srmc": 80.65769488298966,
+      "n_hours_in_season": 2183,
+      "dispatch_hours": 937,
+      "dispatch_share": 0.429225836005497,
+      "avg_spread_eur_mwh": 39.61953030377662,
+      "gross_margin_eur_per_mw": 37123.49989463869
+    },
+    {
+      "year": 2024,
+      "season": "MAM",
+      "srmc": 73.79752246919655,
+      "n_hours_in_season": 2207,
+      "dispatch_hours": 964,
+      "dispatch_share": 0.4367920253738106,
+      "avg_spread_eur_mwh": 21.596668402172746,
+      "gross_margin_eur_per_mw": 20819.188339694527
+    },
+    {
+      "year": 2024,
+      "season": "JJA",
+      "srmc": 83.66803971057587,
+      "n_hours_in_season": 2208,
+      "dispatch_hours": 1075,
+      "dispatch_share": 0.48686594202898553,
+      "avg_spread_eur_mwh": 27.790620754540413,
+      "gross_margin_eur_per_mw": 29874.917311130943
+    },
+    {
+      "year": 2024,
+      "season": "SON",
+      "srmc": 92.87717764161036,
+      "n_hours_in_season": 2185,
+      "dispatch_hours": 1082,
+      "dispatch_share": 0.4951945080091533,
+      "avg_spread_eur_mwh": 35.297424946190006,
+      "gross_margin_eur_per_mw": 38191.81379177759
+    },
+    {
+      "year": 2025,
+      "season": "DJF",
+      "srmc": 98.34173954703448,
+      "n_hours_in_season": 2160,
+      "dispatch_hours": 1260,
+      "dispatch_share": 0.5833333333333334,
+      "avg_spread_eur_mwh": 39.5907882307433,
+      "gross_margin_eur_per_mw": 49884.393170736555
+    },
+    {
+      "year": 2025,
+      "season": "MAM",
+      "srmc": 90.37811885737932,
+      "n_hours_in_season": 2207,
+      "dispatch_hours": 1150,
+      "dispatch_share": 0.5210693248753965,
+      "avg_spread_eur_mwh": 27.60066375131633,
+      "gross_margin_eur_per_mw": 31740.763314013777
+    },
+    {
+      "year": 2025,
+      "season": "JJA",
+      "srmc": 85.19398092634484,
+      "n_hours_in_season": 2208,
+      "dispatch_hours": 1171,
+      "dispatch_share": 0.5303442028985508,
+      "avg_spread_eur_mwh": 23.95617278842886,
+      "gross_margin_eur_per_mw": 28052.678335250195
+    },
+    {
+      "year": 2025,
+      "season": "SON",
+      "srmc": 80.53225678841379,
+      "n_hours_in_season": 2185,
+      "dispatch_hours": 1447,
+      "dispatch_share": 0.6622425629290618,
+      "avg_spread_eur_mwh": 33.980892831489456,
+      "gross_margin_eur_per_mw": 49170.35192716524
+    }
+  ],
+  "base_case": {
+    "by_season": [
+      {
+        "season": "DJF",
+        "avg_dispatch_hours": 1085.8,
+        "avg_spread_eur_mwh": 31.95,
+        "gross_margin_eur_per_mw": 34013.0,
+        "margin_if_h_times_sp": 34687.0
+      },
+      {
+        "season": "MAM",
+        "avg_dispatch_hours": 1191.5,
+        "avg_spread_eur_mwh": 20.42,
+        "gross_margin_eur_per_mw": 23414.0,
+        "margin_if_h_times_sp": 24326.0
+      },
+      {
+        "season": "JJA",
+        "avg_dispatch_hours": 1380.8,
+        "avg_spread_eur_mwh": 22.66,
+        "gross_margin_eur_per_mw": 29588.0,
+        "margin_if_h_times_sp": 31283.0
+      },
+      {
+        "season": "SON",
+        "avg_dispatch_hours": 1175.8,
+        "avg_spread_eur_mwh": 27.4,
+        "gross_margin_eur_per_mw": 31541.0,
+        "margin_if_h_times_sp": 32214.0
+      }
+    ],
+    "annual": {
+      "season": "ANNUAL",
+      "avg_dispatch_hours": 4833.9,
+      "avg_spread_eur_mwh": 24.53,
+      "gross_margin_eur_per_mw": 118556.0,
+      "margin_if_h_times_sp": 118556.0
+    }
+  },
+  "year_2025_alone": {
+    "by_season": [
+      {
+        "season": "DJF",
+        "avg_dispatch_hours": 1260,
+        "avg_spread_eur_mwh": 39.59,
+        "gross_margin_eur_per_mw": 49884.0
+      },
+      {
+        "season": "MAM",
+        "avg_dispatch_hours": 1150,
+        "avg_spread_eur_mwh": 27.6,
+        "gross_margin_eur_per_mw": 31741.0
+      },
+      {
+        "season": "JJA",
+        "avg_dispatch_hours": 1171,
+        "avg_spread_eur_mwh": 23.96,
+        "gross_margin_eur_per_mw": 28053.0
+      },
+      {
+        "season": "SON",
+        "avg_dispatch_hours": 1447,
+        "avg_spread_eur_mwh": 33.98,
+        "gross_margin_eur_per_mw": 49170.0
+      }
+    ],
+    "annual": {
+      "season": "ANNUAL",
+      "avg_dispatch_hours": 5028,
+      "avg_spread_eur_mwh": 31.59,
+      "gross_margin_eur_per_mw": 158848.0
+    },
+    "label": "low-wind / high-dispatch year"
+  },
+  "base_case_ex_2025": {
+    "by_season": [
+      {
+        "season": "DJF",
+        "avg_dispatch_hours": 1027.7,
+        "avg_spread_eur_mwh": 29.4,
+        "gross_margin_eur_per_mw": 28722.0,
+        "margin_if_h_times_sp": 30214.0
+      },
+      {
+        "season": "MAM",
+        "avg_dispatch_hours": 1205.3,
+        "avg_spread_eur_mwh": 18.02,
+        "gross_margin_eur_per_mw": 20638.0,
+        "margin_if_h_times_sp": 21722.0
+      },
+      {
+        "season": "JJA",
+        "avg_dispatch_hours": 1450.7,
+        "avg_spread_eur_mwh": 22.22,
+        "gross_margin_eur_per_mw": 30100.0,
+        "margin_if_h_times_sp": 32239.0
+      },
+      {
+        "season": "SON",
+        "avg_dispatch_hours": 1085.3,
+        "avg_spread_eur_mwh": 25.2,
+        "gross_margin_eur_per_mw": 25664.0,
+        "margin_if_h_times_sp": 27355.0
+      }
+    ],
+    "annual": {
+      "season": "ANNUAL",
+      "avg_dispatch_hours": 4769.0,
+      "avg_spread_eur_mwh": 22.04,
+      "gross_margin_eur_per_mw": 105124.0,
+      "margin_if_h_times_sp": 105124.0
+    }
+  }
+}

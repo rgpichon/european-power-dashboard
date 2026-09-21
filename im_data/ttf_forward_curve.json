@@ -1,0 +1,248 @@
+{
+  "meta": {
+    "as_of": "2026-07-17",
+    "as_of_label": "17 July 2026",
+    "source": "ICE via TradingView (locked in Dashboard/index.html TTF_FORWARD)",
+    "unit": "EUR/MWh",
+    "scenario": "base_case_only",
+    "note": "Named TTF scenario adjustments NOT included — still OPEN / separate step. User shock overlay is ttf_adjustment_pct on the engine path."
+  },
+  "spot": {
+    "date": "2026-07-17",
+    "ttf_eur_mwh": 52.0
+  },
+  "srmc_floor_us_gulf_coast": {
+    "low_eur_mwh": 15,
+    "high_eur_mwh": 22
+  },
+  "beyond_curve": {
+    "last_curve_year": 2030,
+    "real_anchor_month": "2030-12",
+    "real_ttf_eur_mwh": 23.61,
+    "note": "Real-flat at Dec 2030 locked curve point (winter). Article prose ~€20.60 is Jul 2030 summer — see summer_floor_adjacent_eur_mwh. Nominal path: real × (1+inflation)^(year−2030).",
+    "summer_floor_adjacent_eur_mwh": 20.6,
+    "summer_floor_adjacent_month": "2030-07",
+    "inflation_rate": 0.02,
+    "inflation_rate_source": "ECB ~2% target placeholder — adjustable single parameter (inputs.ttfInflationRate or this field); not a forecast",
+    "no_shock_in_base_path": true,
+    "shock_overlay": "ttf_adjustment_pct on scenario inputs (separate user control)"
+  },
+  "curve": [
+    {
+      "month": "2026-07",
+      "ttf_eur_mwh": 51.87
+    },
+    {
+      "month": "2026-08",
+      "ttf_eur_mwh": 51.74
+    },
+    {
+      "month": "2026-09",
+      "ttf_eur_mwh": 51.62
+    },
+    {
+      "month": "2026-10",
+      "ttf_eur_mwh": 51.22
+    },
+    {
+      "month": "2026-11",
+      "ttf_eur_mwh": 50.05
+    },
+    {
+      "month": "2026-12",
+      "ttf_eur_mwh": 49.62
+    },
+    {
+      "month": "2027-01",
+      "ttf_eur_mwh": 49.06
+    },
+    {
+      "month": "2027-02",
+      "ttf_eur_mwh": 48.12
+    },
+    {
+      "month": "2027-03",
+      "ttf_eur_mwh": 45.84
+    },
+    {
+      "month": "2027-04",
+      "ttf_eur_mwh": 38.42
+    },
+    {
+      "month": "2027-05",
+      "ttf_eur_mwh": 35.78
+    },
+    {
+      "month": "2027-06",
+      "ttf_eur_mwh": 35.04
+    },
+    {
+      "month": "2027-07",
+      "ttf_eur_mwh": 34.96
+    },
+    {
+      "month": "2027-08",
+      "ttf_eur_mwh": 34.98
+    },
+    {
+      "month": "2027-09",
+      "ttf_eur_mwh": 35.04
+    },
+    {
+      "month": "2027-10",
+      "ttf_eur_mwh": 34.84
+    },
+    {
+      "month": "2027-11",
+      "ttf_eur_mwh": 34.92
+    },
+    {
+      "month": "2027-12",
+      "ttf_eur_mwh": 35.29
+    },
+    {
+      "month": "2028-01",
+      "ttf_eur_mwh": 34.69
+    },
+    {
+      "month": "2028-02",
+      "ttf_eur_mwh": 34.24
+    },
+    {
+      "month": "2028-03",
+      "ttf_eur_mwh": 32.3
+    },
+    {
+      "month": "2028-04",
+      "ttf_eur_mwh": 27.13
+    },
+    {
+      "month": "2028-05",
+      "ttf_eur_mwh": 25.92
+    },
+    {
+      "month": "2028-06",
+      "ttf_eur_mwh": 25.61
+    },
+    {
+      "month": "2028-07",
+      "ttf_eur_mwh": 25.58
+    },
+    {
+      "month": "2028-08",
+      "ttf_eur_mwh": 25.46
+    },
+    {
+      "month": "2028-09",
+      "ttf_eur_mwh": 25.61
+    },
+    {
+      "month": "2028-10",
+      "ttf_eur_mwh": 25.62
+    },
+    {
+      "month": "2028-11",
+      "ttf_eur_mwh": 26.12
+    },
+    {
+      "month": "2028-12",
+      "ttf_eur_mwh": 26.52
+    },
+    {
+      "month": "2029-01",
+      "ttf_eur_mwh": 26.72
+    },
+    {
+      "month": "2029-02",
+      "ttf_eur_mwh": 26.59
+    },
+    {
+      "month": "2029-03",
+      "ttf_eur_mwh": 26.3
+    },
+    {
+      "month": "2029-04",
+      "ttf_eur_mwh": 23.03
+    },
+    {
+      "month": "2029-05",
+      "ttf_eur_mwh": 22.53
+    },
+    {
+      "month": "2029-06",
+      "ttf_eur_mwh": 22.07
+    },
+    {
+      "month": "2029-07",
+      "ttf_eur_mwh": 21.91
+    },
+    {
+      "month": "2029-08",
+      "ttf_eur_mwh": 22.01
+    },
+    {
+      "month": "2029-09",
+      "ttf_eur_mwh": 22.67
+    },
+    {
+      "month": "2029-10",
+      "ttf_eur_mwh": 22.74
+    },
+    {
+      "month": "2029-11",
+      "ttf_eur_mwh": 23.16
+    },
+    {
+      "month": "2029-12",
+      "ttf_eur_mwh": 23.56
+    },
+    {
+      "month": "2030-01",
+      "ttf_eur_mwh": 23.69
+    },
+    {
+      "month": "2030-02",
+      "ttf_eur_mwh": 23.68
+    },
+    {
+      "month": "2030-03",
+      "ttf_eur_mwh": 23.66
+    },
+    {
+      "month": "2030-04",
+      "ttf_eur_mwh": 22.34
+    },
+    {
+      "month": "2030-05",
+      "ttf_eur_mwh": 21.94
+    },
+    {
+      "month": "2030-06",
+      "ttf_eur_mwh": 21.47
+    },
+    {
+      "month": "2030-07",
+      "ttf_eur_mwh": 20.6
+    },
+    {
+      "month": "2030-08",
+      "ttf_eur_mwh": 20.97
+    },
+    {
+      "month": "2030-09",
+      "ttf_eur_mwh": 21.65
+    },
+    {
+      "month": "2030-10",
+      "ttf_eur_mwh": 22.4
+    },
+    {
+      "month": "2030-11",
+      "ttf_eur_mwh": 23.18
+    },
+    {
+      "month": "2030-12",
+      "ttf_eur_mwh": 23.61
+    }
+  ]
+}

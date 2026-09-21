@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "clean_years": [
+      2019,
+      2023,
+      2024,
+      2025
+    ],
+    "excluded_years": [
+      2020,
+      2021,
+      2022
+    ],
+    "avg_price_source": "mvf_*_DE_LU.csv avg_price (hourly DA mean over aligned hours)",
+    "vre_share_source": "vre_block_panel_DE_LU.csv energy-weighted mean of block vre_share",
+    "mvf_source": "mvf_solar / mvf_wind_onshore / mvf_wind_offshore_DE_LU.csv",
+    "penetration_source": "reference_table_DEU.csv (Ember)",
+    "purpose": "reproduction validation + extrapolation-badge observed range"
+  },
+  "years": [
+    {
+      "year": 2019,
+      "avg_price_eur_mwh": 37.67,
+      "vre_share_of_generation": 0.317,
+      "penetration": {
+        "renewable_pct": 40.19,
+        "wind_pct": 20.98,
+        "solar_pct": 7.54,
+        "source": "ember_deu_penetration_yearly / reference_table_DEU"
+      },
+      "mvf": {
+        "solar": 0.9267,
+        "wind_onshore": 0.858,
+        "wind_offshore": 0.9227,
+        "wind_fleet_blend": 0.8707
+      },
+      "capacity_gw_ember": {
+        "solar": 48.91,
+        "wind": 60.74
+      },
+      "capture_price_eur_mwh": {
+        "solar": 34.91,
+        "wind_onshore": 32.32,
+        "wind_offshore": 34.76
+      }
+    },
+    {
+      "year": 2023,
+      "avg_price_eur_mwh": 95.18,
+      "vre_share_of_generation": 0.4372,
+      "penetration": {
+        "renewable_pct": 54.69,
+        "wind_pct": 27.74,
+        "solar_pct": 12.6,
+        "source": "ember_deu_penetration_yearly / reference_table_DEU"
+      },
+      "mvf": {
+        "solar": 0.7584,
+        "wind_onshore": 0.8257,
+        "wind_offshore": 0.9096,
+        "wind_fleet_blend": 0.8395
+      },
+      "capacity_gw_ember": {
+        "solar": 75.52,
+        "wind": 69.44
+      },
+      "capture_price_eur_mwh": {
+        "solar": 72.18,
+        "wind_onshore": 78.59,
+        "wind_offshore": 86.57
+      }
+    },
+    {
+      "year": 2024,
+      "avg_price_eur_mwh": 78.52,
+      "vre_share_of_generation": 0.4605,
+      "penetration": {
+        "renewable_pct": 58.64,
+        "wind_pct": 28.55,
+        "solar_pct": 14.95,
+        "source": "ember_deu_penetration_yearly / reference_table_DEU"
+      },
+      "mvf": {
+        "solar": 0.5888,
+        "wind_onshore": 0.8222,
+        "wind_offshore": 0.9094,
+        "wind_fleet_blend": 0.8383
+      },
+      "capacity_gw_ember": {
+        "solar": 91.2,
+        "wind": 72.74
+      },
+      "capture_price_eur_mwh": {
+        "solar": 46.23,
+        "wind_onshore": 64.56,
+        "wind_offshore": 71.4
+      }
+    },
+    {
+      "year": 2025,
+      "avg_price_eur_mwh": 89.32,
+      "vre_share_of_generation": 0.4727,
+      "penetration": {
+        "renewable_pct": 59.1,
+        "wind_pct": 27.18,
+        "solar_pct": 17.91,
+        "source": "ember_deu_penetration_yearly / reference_table_DEU"
+      },
+      "mvf": {
+        "solar": 0.5156,
+        "wind_onshore": 0.8659,
+        "wind_offshore": 0.9576,
+        "wind_fleet_blend": 0.8839
+      },
+      "capacity_gw_ember": {
+        "solar": 106.27,
+        "wind": 77.81
+      },
+      "capture_price_eur_mwh": {
+        "solar": 46.06,
+        "wind_onshore": 77.34,
+        "wind_offshore": 85.53
+      }
+    }
+  ],
+  "observed_ranges": {
+    "avg_price_eur_mwh": {
+      "min": 37.67,
+      "max": 95.18
+    },
+    "vre_share_of_generation": {
+      "min": 0.317,
+      "max": 0.4727
+    },
+    "solar_capacity_gw": {
+      "min": 48.91,
+      "max": 106.27
+    },
+    "wind_capacity_gw": {
+      "min": 60.74,
+      "max": 77.81
+    },
+    "solar_mvf": {
+      "min": 0.5156,
+      "max": 0.9267
+    },
+    "wind_fleet_mvf": {
+      "min": 0.8383,
+      "max": 0.8839
+    }
+  }
+}

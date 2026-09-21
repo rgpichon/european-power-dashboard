@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "formula": "Two-segment: demand_y = base × (1+g1)^(min(y,2037)−2025) × (1+g2)^max(0, y−2037). g1 = implied CAGR NEP 2024→2037; g2 = implied CAGR NEP 2037→2045 (scenario-specific).",
+    "source": "Segment 1 rates locked from NEP draft Kap.2 Abb.6 Brutto 2024→2037 (existing). Segment 2 from BNetzA Genehmigung Szenariorahmen 2025-2037/2045 Tabelle 14 Bruttostromverbrauch (per-scenario, not a range).",
+    "default_scenario": "B",
+    "superseded_equal_weight_twh": 476.7,
+    "superseded_single_cagr": "Constant g1 through 2045 overstated long-run demand (Scenario B hit ~1360 TWh vs NEP B Brutto 1182).",
+    "nep_note_999_twh": "User-cited '~999 TWh' is not a clean Scenario-B 2037 Brutto figure in the approved Szenariorahmen (B Netto 2037=956.7, B Brutto 2037=1027.4; draft Abb.6 B Brutto was 1041.3). Segment-1 rate kept at locked +5.45%/yr as requested."
+  },
+  "base_year": 2025,
+  "demand_base_twh": 470.661147,
+  "segment_pivot_year": 2037,
+  "scenarios": [
+    {
+      "id": "A",
+      "label": "slower electrification / lower growth",
+      "growth_rate": 0.039622,
+      "growth_rate_pct": 3.96,
+      "growth_rate_post_2037": 0.01455,
+      "growth_rate_post_2037_pct": 1.46,
+      "nep_brutto_2024_twh": 522.5,
+      "nep_brutto_2037_twh_draft_abb6": 865.9,
+      "nep_brutto_2045_twh_draft_abb6": 989.5,
+      "nep_brutto_2037_twh_genehmigung": 845.0,
+      "nep_brutto_2045_twh_genehmigung": 948.2,
+      "segment2_cagr_source": "Genehmigung Tab.14 Brutto A 845.0→948.2 over 8 years"
+    },
+    {
+      "id": "B",
+      "label": "aligned with legally mandated renewable targets",
+      "growth_rate": 0.054478,
+      "growth_rate_pct": 5.45,
+      "growth_rate_post_2037": 0.017666,
+      "growth_rate_post_2037_pct": 1.77,
+      "nep_brutto_2024_twh": 522.5,
+      "nep_brutto_2037_twh_draft_abb6": 1041.3,
+      "nep_brutto_2045_twh_draft_abb6": 1198.4,
+      "nep_brutto_2037_twh_genehmigung": 1027.4,
+      "nep_brutto_2045_twh_genehmigung": 1181.9,
+      "nep_netto_2037_twh_genehmigung": 956.7,
+      "nep_netto_2045_twh_genehmigung": 1101.8,
+      "segment2_cagr_source": "Genehmigung Tab.14 Brutto B 1027.4→1181.9 over 8 years (per-scenario; not a cross-scenario range)"
+    },
+    {
+      "id": "C",
+      "label": "most ambitious electrification pathway",
+      "growth_rate": 0.057938,
+      "growth_rate_pct": 5.79,
+      "growth_rate_post_2037": 0.02285,
+      "growth_rate_post_2037_pct": 2.28,
+      "nep_brutto_2024_twh": 522.5,
+      "nep_brutto_2037_twh_draft_abb6": 1086.6,
+      "nep_brutto_2045_twh_draft_abb6": 1294.3,
+      "nep_brutto_2037_twh_genehmigung": 1065.1,
+      "nep_brutto_2045_twh_genehmigung": 1275.5,
+      "segment2_cagr_source": "Genehmigung Tab.14 Brutto C 1065.1→1275.5 over 8 years"
+    }
+  ]
+}

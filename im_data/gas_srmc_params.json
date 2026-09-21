@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "formula": "SRMC = TTF / eta + EUA × (EF_thermal / eta)",
+    "source": "gas_price_setting_meta.json",
+    "tolerance_for_gas_setting_share": {
+      "kind": "pct",
+      "width": 0.15,
+      "label": "±15%"
+    }
+  },
+  "ef_thermal_t_per_mwh": 0.20196,
+  "efficiency_by_era": [
+    {
+      "year_from": 1900,
+      "year_to": 2014,
+      "efficiency": 0.52,
+      "eua_multiplier_t_per_mwh_e": 0.388385,
+      "label": "≤2014"
+    },
+    {
+      "year_from": 2015,
+      "year_to": 2020,
+      "efficiency": 0.55,
+      "eua_multiplier_t_per_mwh_e": 0.3672,
+      "label": "2015–2020"
+    },
+    {
+      "year_from": 2021,
+      "year_to": 2100,
+      "efficiency": 0.58,
+      "eua_multiplier_t_per_mwh_e": 0.348207,
+      "label": "≥2021"
+    }
+  ],
+  "eua_spot_documentation": {
+    "eur_per_t": 79.11,
+    "as_of": "2026-07-17",
+    "contract": "CKZ26",
+    "source": "ICE Endex Dec-26 EOD settlement — first point of eua_forward_curve.json",
+    "note": "RETIRED as engine fallback. resolveEuaAnnual reads eua_forward_curve.json only (curve + 2%/yr beyond Dec-2032). This field is documentation of the Dec-26 lock for article/spot worked examples."
+  },
+  "scenario_default_era": {
+    "note": "For forward scenario years ≥2021 use eta=0.58 and corresponding eua_multiplier",
+    "efficiency": 0.58,
+    "eua_multiplier_t_per_mwh_e": 0.348207
+  }
+}

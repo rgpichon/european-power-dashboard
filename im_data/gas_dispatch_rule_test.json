@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "rule": "dispatch_share = s_gas + s_res\u00b71{\u03b4\u22650}; spread = (s_res\u00b7\u03b4)/dispatch_share if \u03b4\u22650 else 0; locked bin plugs",
+    "threshold": {
+      "annual_hours_pct": 15,
+      "annual_spread_eur_or_pct": "\u00b1\u20ac5 or \u00b125%",
+      "annual_margin_pct": 20,
+      "season_flag_hours_or_margin_pct": 25,
+      "season_flag_spread_eur": 8
+    },
+    "verdict": "FAIL"
+  },
+  "real_base_case": [
+    {
+      "season": "DJF",
+      "hours": 1085.75,
+      "spread": 31.947890588226954,
+      "margin": 34687.422206167415
+    },
+    {
+      "season": "MAM",
+      "hours": 1191.5,
+      "spread": 20.416441529124665,
+      "margin": 24326.190081952038
+    },
+    {
+      "season": "JJA",
+      "hours": 1380.75,
+      "spread": 22.656769587483375,
+      "margin": 31283.33460791767
+    },
+    {
+      "season": "SON",
+      "hours": 1175.75,
+      "spread": 27.398375084117035,
+      "margin": 32213.639505150604
+    },
+    {
+      "season": "ANNUAL",
+      "hours": 4833.75,
+      "spread": 25.34483297671326,
+      "margin": 122510.58640118773
+    }
+  ],
+  "derived_base_case": [
+    {
+      "season": "DJF",
+      "avg_dispatch_hours": 1691.4000232499998,
+      "avg_spread_eur_mwh": 12.45500328433978,
+      "gross_margin_h_times_sp": 21066.39284471113,
+      "gross_margin_mean_of_yearly": 21231.822517624998
+    },
+    {
+      "season": "MAM",
+      "avg_dispatch_hours": 1595.8526762499998,
+      "avg_spread_eur_mwh": 11.245398997378983,
+      "gross_margin_h_times_sp": 17946.000085466316,
+      "gross_margin_mean_of_yearly": 18113.50762085
+    },
+    {
+      "season": "JJA",
+      "avg_dispatch_hours": 1549.5761535000001,
+      "avg_spread_eur_mwh": 11.939109148359739,
+      "gross_margin_h_times_sp": 18500.558830331946,
+      "gross_margin_mean_of_yearly": 18947.09603001
+    },
+    {
+      "season": "SON",
+      "avg_dispatch_hours": 1663.0472262500002,
+      "avg_spread_eur_mwh": 12.25412993981619,
+      "gross_margin_h_times_sp": 20379.196806518397,
+      "gross_margin_mean_of_yearly": 20722.295167705
+    },
+    {
+      "season": "ANNUAL",
+      "avg_dispatch_hours": 6499.87607925,
+      "avg_spread_eur_mwh": 11.983635936643198,
+      "gross_margin_h_times_sp": 77892.14856702779,
+      "gross_margin_mean_of_yearly": 79014.72133618999
+    }
+  ]
+}

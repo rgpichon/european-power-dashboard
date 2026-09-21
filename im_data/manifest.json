@@ -1,0 +1,29 @@
+{
+  "purpose": "Static JSON bundle for Interaction Model browser scenario engine",
+  "locations": [
+    "Dashboard/im_data",
+    "entsoe-pipeline/data/out/im_static"
+  ],
+  "files": [
+    "shape_solar_season_block.json",
+    "shape_wind_season_block.json",
+    "shape_demand_season_block.json",
+    "delta_by_vre_bin.json",
+    "p_neg_by_vre_bin.json",
+    "ttf_forward_curve.json",
+    "eua_forward_curve.json",
+    "demand_growth_scenarios.json",
+    "gas_srmc_params.json",
+    "historical_reference_years.json",
+    "bucket_shares_by_vre_bin.json",
+    "within_cell_mvf_discounts.json",
+    "grid_visibility_factors.json",
+    "seasonal_commodity_means.json",
+    "gas_dispatch_overlay.json",
+    "reference_table_deu.json",
+    "scenario_chain_summary.json"
+  ],
+  "open_not_exported": [
+    "ttf_scenario_adjustments.json \u2014 Module 1 magnitudes not yet parameterized"
+  ]
+}

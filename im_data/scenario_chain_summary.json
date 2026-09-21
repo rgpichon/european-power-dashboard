@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "source": "scenarioEngine.js runMultiYear.mjs",
+    "scenario": "B",
+    "capacity_path": "EEG2030→2040 rate + post-2040 extrapolation",
+    "purpose": "dashboard financing sparkline + forward gas margin path"
+  },
+  "rows": [
+    {
+      "year": 2025,
+      "demand_twh": 470.66,
+      "solar_gw": 106.27,
+      "wind_gw": 77.81,
+      "ttf_eur_mwh": 36.39,
+      "avg_price_eur_mwh": 80.43,
+      "gas_margin_eur_per_mw": 80577,
+      "capacity_extrapolated_past_2040": false
+    },
+    {
+      "year": 2026,
+      "demand_twh": 496.3,
+      "solar_gw": 128.02,
+      "wind_gw": 85.25,
+      "ttf_eur_mwh": 51.02,
+      "avg_price_eur_mwh": 97.48,
+      "gas_margin_eur_per_mw": 66694,
+      "capacity_extrapolated_past_2040": false
+    },
+    {
+      "year": 2027,
+      "demand_twh": 523.34,
+      "solar_gw": 149.76,
+      "wind_gw": 92.69,
+      "ttf_eur_mwh": 38.52,
+      "avg_price_eur_mwh": 74.08,
+      "gas_margin_eur_per_mw": 56887,
+      "capacity_extrapolated_past_2040": false
+    },
+    {
+      "year": 2028,
+      "demand_twh": 551.85,
+      "solar_gw": 171.51,
+      "wind_gw": 100.12,
+      "ttf_eur_mwh": 27.9,
+      "avg_price_eur_mwh": 56.4,
+      "gas_margin_eur_per_mw": 51482,
+      "capacity_extrapolated_past_2040": false
+    },
+    {
+      "year": 2029,
+      "demand_twh": 581.91,
+      "solar_gw": 193.25,
+      "wind_gw": 107.56,
+      "ttf_eur_mwh": 23.61,
+      "avg_price_eur_mwh": 46.37,
+      "gas_margin_eur_per_mw": 45908,
+      "capacity_extrapolated_past_2040": false
+    },
+    {
+      "year": 2030,
+      "demand_twh": 613.61,
+      "solar_gw": 215,
+      "wind_gw": 115,
+      "ttf_eur_mwh": 22.43,
+      "avg_price_eur_mwh": 42.21,
+      "gas_margin_eur_per_mw": 40950,
+      "capacity_extrapolated_past_2040": false
+    },
+    {
+      "year": 2031,
+      "demand_twh": 647.04,
+      "solar_gw": 233.5,
+      "wind_gw": 119.5,
+      "ttf_eur_mwh": 24.08,
+      "avg_price_eur_mwh": 45.41,
+      "gas_margin_eur_per_mw": 45908,
+      "capacity_extrapolated_past_2040": false
+    },
+    {
+      "year": 2032,
+      "demand_twh": 682.29,
+      "solar_gw": 252,
+      "wind_gw": 124,
+      "ttf_eur_mwh": 24.56,
+      "avg_price_eur_mwh": 45.33,
+      "gas_margin_eur_per_mw": 45963,
+      "capacity_extrapolated_past_2040": false
+    },
+    {
+      "year": 2033,
+      "demand_twh": 719.46,
+      "solar_gw": 270.5,
+      "wind_gw": 128.5,
+      "ttf_eur_mwh": 25.06,
+      "avg_price_eur_mwh": 46.8,
+      "gas_margin_eur_per_mw": 56887,
+      "capacity_extrapolated_past_2040": false
+    },
+    {
+      "year": 2034,
+      "demand_twh": 758.66,
+      "solar_gw": 289,
+      "wind_gw": 133,
+      "ttf_eur_mwh": 25.56,
+      "avg_price_eur_mwh": 47.46,
+      "gas_margin_eur_per_mw": 56887,
+      "capacity_extrapolated_past_2040": false
+    },
+    {
+      "year": 2035,
+      "demand_twh": 799.99,
+      "solar_gw": 307.5,
+      "wind_gw": 137.5,
+      "ttf_eur_mwh": 26.07,
+      "avg_price_eur_mwh": 49.75,
+      "gas_margin_eur_per_mw": 56887,
+      "capacity_extrapolated_past_2040": false
+    },
+    {
+      "year": 2036,
+      "demand_twh": 843.57,
+      "solar_gw": 326,
+      "wind_gw": 142,
+      "ttf_eur_mwh": 26.59,
+      "avg_price_eur_mwh": 50.44,
+      "gas_margin_eur_per_mw": 56941,
+      "capacity_extrapolated_past_2040": false
+    },
+    {
+      "year": 2037,
+      "demand_twh": 889.53,
+      "solar_gw": 344.5,
+      "wind_gw": 146.5,
+      "ttf_eur_mwh": 27.12,
+      "avg_price_eur_mwh": 51.48,
+      "gas_margin_eur_per_mw": 62406,
+      "capacity_extrapolated_past_2040": false
+    },
+    {
+      "year": 2038,
+      "demand_twh": 905.24,
+      "solar_gw": 363,
+      "wind_gw": 151,
+      "ttf_eur_mwh": 27.66,
+      "avg_price_eur_mwh": 51.86,
+      "gas_margin_eur_per_mw": 56887,
+      "capacity_extrapolated_past_2040": false
+    },
+    {
+      "year": 2039,
+      "demand_twh": 921.23,
+      "solar_gw": 381.5,
+      "wind_gw": 155.5,
+      "ttf_eur_mwh": 28.22,
+      "avg_price_eur_mwh": 50.95,
+      "gas_margin_eur_per_mw": 56887,
+      "capacity_extrapolated_past_2040": false
+    },
+    {
+      "year": 2040,
+      "demand_twh": 937.51,
+      "solar_gw": 400,
+      "wind_gw": 160,
+      "ttf_eur_mwh": 28.78,
+      "avg_price_eur_mwh": 50.73,
+      "gas_margin_eur_per_mw": 56941,
+      "capacity_extrapolated_past_2040": false
+    },
+    {
+      "year": 2041,
+      "demand_twh": 954.07,
+      "solar_gw": 418.5,
+      "wind_gw": 164.5,
+      "ttf_eur_mwh": 29.36,
+      "avg_price_eur_mwh": 50.7,
+      "gas_margin_eur_per_mw": 56887,
+      "capacity_extrapolated_past_2040": true
+    },
+    {
+      "year": 2042,
+      "demand_twh": 970.92,
+      "solar_gw": 437,
+      "wind_gw": 169,
+      "ttf_eur_mwh": 29.94,
+      "avg_price_eur_mwh": 51.42,
+      "gas_margin_eur_per_mw": 56887,
+      "capacity_extrapolated_past_2040": true
+    },
+    {
+      "year": 2043,
+      "demand_twh": 988.08,
+      "solar_gw": 455.5,
+      "wind_gw": 173.5,
+      "ttf_eur_mwh": 30.54,
+      "avg_price_eur_mwh": 51.74,
+      "gas_margin_eur_per_mw": 51368,
+      "capacity_extrapolated_past_2040": true
+    },
+    {
+      "year": 2044,
+      "demand_twh": 1005.53,
+      "solar_gw": 474,
+      "wind_gw": 178,
+      "ttf_eur_mwh": 31.15,
+      "avg_price_eur_mwh": 50.7,
+      "gas_margin_eur_per_mw": 51422,
+      "capacity_extrapolated_past_2040": true
+    },
+    {
+      "year": 2045,
+      "demand_twh": 1023.29,
+      "solar_gw": 492.5,
+      "wind_gw": 182.5,
+      "ttf_eur_mwh": 31.78,
+      "avg_price_eur_mwh": 51.03,
+      "gas_margin_eur_per_mw": 45908,
+      "capacity_extrapolated_past_2040": true
+    }
+  ]
+}

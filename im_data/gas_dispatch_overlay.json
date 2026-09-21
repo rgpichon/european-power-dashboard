@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "chosen": "two_global_constants",
+    "hours_mult": 0.746646,
+    "spread_mult": 2.098906,
+    "rejected_alternatives": [
+      {
+        "option": "four_season_multiplier_pairs",
+        "reason": "8 free parameters on 4 clean years per season \u2014 overfit; global constants already clear stated thresholds"
+      },
+      {
+        "option": "spread_mult ~ |mean_delta_season| or srmc_season (linear)",
+        "reason": "In-sample R\u00b2 \u2248 0.92\u20130.94 vs |mean \u03b4| / SRMC, but leave-one-out errors \u00b10.1\u20130.2 on n=4; adds scenario-dependent complexity without improving threshold passage vs constants",
+        "in_sample_r_spread_vs_abs_mean_delta": 0.97,
+        "in_sample_r_spread_vs_srmc": 0.959
+      },
+      {
+        "option": "hours_mult ~ mean_s_gas (linear)",
+        "reason": "In-sample r \u2248 \u22120.99 but near-tautological with the over-count mechanism; LOO still noisy; constants suffice"
+      }
+    ],
+    "applies_to": "gas dispatch hours, average spread, and gross margin only \u2014 never Module 3 price, bucket shares, or \u03b4",
+    "mechanical_rule": "dispatch_share = s_gas + s_res\u00b71{\u03b4\u22650}; raw_spread = (s_res\u00b7\u03b4)/dispatch_share if \u03b4\u22650 else 0; then hours_corr = hours_raw \u00d7 hours_mult; spread_corr = spread_raw \u00d7 spread_mult; margin = hours_corr \u00d7 spread_corr",
+    "v1_simplification": true,
+    "held_fixed_from_clean_years": [
+      2019,
+      2023,
+      2024,
+      2025
+    ],
+    "same_disclosure_standard_as": "within_cell_mvf_discounts (wind)",
+    "validation_thresholds": {
+      "annual_hours_pct": 15,
+      "annual_spread_eur_or_pct": "\u00b1\u20ac5 or \u00b125%",
+      "annual_margin_pct": 20,
+      "season_flag_hours_or_margin_pct": 25,
+      "season_flag_spread_eur": 8
+    },
+    "validation_result": "PASS",
+    "validation_detail": {
+      "annual_hours": true,
+      "annual_spread": true,
+      "annual_margin": true,
+      "season_flags": []
+    }
+  },
+  "overlay": {
+    "hours_mult": 0.746646,
+    "spread_mult": 2.098906,
+    "season_specific": false
+  },
+  "calibration_season_mults_for_reference_only": [
+    {
+      "season": "DJF",
+      "hours_mult": 0.6419,
+      "spread_mult": 2.5451
+    },
+    {
+      "season": "MAM",
+      "hours_mult": 0.7466,
+      "spread_mult": 1.7987
+    },
+    {
+      "season": "JJA",
+      "hours_mult": 0.8911,
+      "spread_mult": 1.853
+    },
+    {
+      "season": "SON",
+      "hours_mult": 0.707,
+      "spread_mult": 2.1988
+    }
+  ],
+  "corrected_vs_real_base_case": [
+    {
+      "season": "DJF",
+      "corrected_hours": 1262.9,
+      "corrected_spread": 26.35,
+      "corrected_margin": 33273.0,
+      "real_hours": 1085.8,
+      "real_spread": 31.95,
+      "real_margin": 34687.0,
+      "hours_pct_err": 16.3,
+      "spread_eur_err": -5.6,
+      "margin_pct_err": -4.1
+    },
+    {
+      "season": "MAM",
+      "corrected_hours": 1191.5,
+      "corrected_spread": 23.82,
+      "corrected_margin": 28386.0,
+      "real_hours": 1191.5,
+      "real_spread": 20.42,
+      "real_margin": 24326.0,
+      "hours_pct_err": 0.0,
+      "spread_eur_err": 3.41,
+      "margin_pct_err": 16.7
+    },
+    {
+      "season": "JJA",
+      "corrected_hours": 1157.0,
+      "corrected_spread": 25.66,
+      "corrected_margin": 29693.0,
+      "real_hours": 1380.8,
+      "real_spread": 22.66,
+      "real_margin": 31283.0,
+      "hours_pct_err": -16.2,
+      "spread_eur_err": 3.01,
+      "margin_pct_err": -5.1
+    },
+    {
+      "season": "SON",
+      "corrected_hours": 1241.7,
+      "corrected_spread": 26.15,
+      "corrected_margin": 32475.0,
+      "real_hours": 1175.8,
+      "real_spread": 27.4,
+      "real_margin": 32214.0,
+      "hours_pct_err": 5.6,
+      "spread_eur_err": -1.25,
+      "margin_pct_err": 0.8
+    },
+    {
+      "season": "ANNUAL",
+      "corrected_hours": 4853.1,
+      "corrected_spread": 25.52,
+      "corrected_margin": 123827.0,
+      "real_hours": 4833.8,
+      "real_spread": 25.34,
+      "real_margin": 122511.0,
+      "hours_pct_err": 0.4,
+      "spread_eur_err": 0.17,
+      "margin_pct_err": 1.1
+    }
+  ]
+}

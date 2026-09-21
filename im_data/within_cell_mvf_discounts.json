@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "definition": "Within-cell tech discount = (\u03a3 P_h\u00b7gen_h / \u03a3 gen_h) \u2212 mean(P_h), computed on clean-year hours in each season\u00d7block cell. Applied ONLY to scenario MVF capture prices, not to Module 3 cell prices.",
+    "clean_years": [
+      2019,
+      2023,
+      2024,
+      2025
+    ],
+    "held_fixed": true,
+    "scenario_dependent": false,
+    "v1_simplification": "Discounts are locked from historical clean years and do not vary with scenario capacity, demand growth, or TTF \u2014 stated v1 methodology choice.",
+    "within_cell_corr_wind_price_mean": -0.3777,
+    "within_cell_corr_solar_price_mean": -0.1637,
+    "energy_weighted_mean_wind_discount_eur_mwh": -11.8055,
+    "energy_weighted_mean_solar_discount_eur_mwh": 0.0,
+    "solar_correction_applied": false,
+    "solar_correction_reason": "Solar within-cell discount ZEROED. Bin-assignment already captures most solar cannibalization; absolute \u20ac discount double-counted it against low-price high-VRE cells. Wind discount retained.",
+    "source": "build_hourly_panel() clean years"
+  },
+  "cells": [
+    {
+      "season": "DJF",
+      "block": "night",
+      "wind_discount_eur_mwh": -14.7935,
+      "solar_discount_eur_mwh": 0.0,
+      "n_hours": 2163
+    },
+    {
+      "season": "DJF",
+      "block": "morning",
+      "wind_discount_eur_mwh": -16.7217,
+      "solar_discount_eur_mwh": 0.0,
+      "n_hours": 2166
+    },
+    {
+      "season": "DJF",
+      "block": "afternoon",
+      "wind_discount_eur_mwh": -17.5031,
+      "solar_discount_eur_mwh": 0.0,
+      "n_hours": 2166
+    },
+    {
+      "season": "DJF",
+      "block": "evening",
+      "wind_discount_eur_mwh": -15.1773,
+      "solar_discount_eur_mwh": 0.0,
+      "n_hours": 2166
+    },
+    {
+      "season": "MAM",
+      "block": "night",
+      "wind_discount_eur_mwh": -10.1478,
+      "solar_discount_eur_mwh": 0.0,
+      "n_hours": 2204
+    },
+    {
+      "season": "MAM",
+      "block": "morning",
+      "wind_discount_eur_mwh": -7.0375,
+      "solar_discount_eur_mwh": 0.0,
+      "n_hours": 2208
+    },
+    {
+      "season": "MAM",
+      "block": "afternoon",
+      "wind_discount_eur_mwh": -3.823,
+      "solar_discount_eur_mwh": 0.0,
+      "n_hours": 2208
+    },
+    {
+      "season": "MAM",
+      "block": "evening",
+      "wind_discount_eur_mwh": -10.6665,
+      "solar_discount_eur_mwh": 0.0,
+      "n_hours": 2208
+    },
+    {
+      "season": "JJA",
+      "block": "night",
+      "wind_discount_eur_mwh": -6.4601,
+      "solar_discount_eur_mwh": 0.0,
+      "n_hours": 2208
+    },
+    {
+      "season": "JJA",
+      "block": "morning",
+      "wind_discount_eur_mwh": -8.58,
+      "solar_discount_eur_mwh": 0.0,
+      "n_hours": 2208
+    },
+    {
+      "season": "JJA",
+      "block": "afternoon",
+      "wind_discount_eur_mwh": -9.0703,
+      "solar_discount_eur_mwh": 0.0,
+      "n_hours": 2208
+    },
+    {
+      "season": "JJA",
+      "block": "evening",
+      "wind_discount_eur_mwh": -9.2921,
+      "solar_discount_eur_mwh": 0.0,
+      "n_hours": 2208
+    },
+    {
+      "season": "SON",
+      "block": "night",
+      "wind_discount_eur_mwh": -11.9422,
+      "solar_discount_eur_mwh": 0.0,
+      "n_hours": 2188
+    },
+    {
+      "season": "SON",
+      "block": "morning",
+      "wind_discount_eur_mwh": -10.1821,
+      "solar_discount_eur_mwh": 0.0,
+      "n_hours": 2184
+    },
+    {
+      "season": "SON",
+      "block": "afternoon",
+      "wind_discount_eur_mwh": -10.0489,
+      "solar_discount_eur_mwh": 0.0,
+      "n_hours": 2184
+    },
+    {
+      "season": "SON",
+      "block": "evening",
+      "wind_discount_eur_mwh": -14.7096,
+      "solar_discount_eur_mwh": 0.0,
+      "n_hours": 2184
+    }
+  ]
+}

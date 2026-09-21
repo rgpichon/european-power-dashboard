@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "ttf_treatment": "season-specific means (DJF/MAM/JJA/SON)",
+    "eua_treatment": "annual mean only \u2014 seasonality not meaningful for SRMC",
+    "eua_rationale": "Clean-year EUA peak\u2013trough within-year spread averages \u20ac7.3/t (~10% of level); no heating-driven seasonal driver. TTF DJF/JJA ratio \u2248 1.32 historically.",
+    "source": "ICE TTF + Carbon Emissions Futures daily (Investing.com), same pipeline series",
+    "ttf_seasonal_ratio_to_annual_clean_years": {
+      "DJF": 1.151494,
+      "MAM": 0.954907,
+      "JJA": 0.875165,
+      "SON": 1.02637
+    },
+    "srmc_formula": "SRMC_season = TTF_season / 0.58 + EUA_annual \u00d7 0.348207"
+  },
+  "by_year": {
+    "2019": {
+      "ttf_by_season": {
+        "DJF": {
+          "ttf_eur_mwh": 18.1245,
+          "n_ttf_days": 62
+        },
+        "MAM": {
+          "ttf_eur_mwh": 14.5633,
+          "n_ttf_days": 64
+        },
+        "JJA": {
+          "ttf_eur_mwh": 11.0484,
+          "n_ttf_days": 65
+        },
+        "SON": {
+          "ttf_eur_mwh": 14.8715,
+          "n_ttf_days": 65
+        }
+      },
+      "ttf_annual_eur_mwh": 14.6116,
+      "eua_annual_eur_per_t": 26.0849,
+      "eua_by_season": {
+        "DJF": 24.6649,
+        "MAM": 25.6978,
+        "JJA": 28.0454,
+        "SON": 25.8818
+      }
+    },
+    "2023": {
+      "ttf_by_season": {
+        "DJF": {
+          "ttf_eur_mwh": 51.5467,
+          "n_ttf_days": 61
+        },
+        "MAM": {
+          "ttf_eur_mwh": 39.1016,
+          "n_ttf_days": 65
+        },
+        "JJA": {
+          "ttf_eur_mwh": 32.4292,
+          "n_ttf_days": 66
+        },
+        "SON": {
+          "ttf_eur_mwh": 43.3288,
+          "n_ttf_days": 65
+        }
+      },
+      "ttf_annual_eur_mwh": 41.4111,
+      "eua_annual_eur_per_t": 84.5974,
+      "eua_by_season": {
+        "DJF": 81.5093,
+        "MAM": 89.2875,
+        "JJA": 87.2785,
+        "SON": 80.1551
+      }
+    },
+    "2024": {
+      "ttf_by_season": {
+        "DJF": {
+          "ttf_eur_mwh": 33.3574,
+          "n_ttf_days": 63
+        },
+        "MAM": {
+          "ttf_eur_mwh": 29.3785,
+          "n_ttf_days": 64
+        },
+        "JJA": {
+          "ttf_eur_mwh": 35.1034,
+          "n_ttf_days": 65
+        },
+        "SON": {
+          "ttf_eur_mwh": 40.4447,
+          "n_ttf_days": 65
+        }
+      },
+      "ttf_annual_eur_mwh": 34.6006,
+      "eua_annual_eur_per_t": 66.4689,
+      "eua_by_season": {
+        "DJF": 63.88,
+        "MAM": 66.6164,
+        "JJA": 69.7063,
+        "SON": 65.5954
+      }
+    },
+    "2025": {
+      "ttf_by_season": {
+        "DJF": {
+          "ttf_eur_mwh": 42.035,
+          "n_ttf_days": 63
+        },
+        "MAM": {
+          "ttf_eur_mwh": 37.4161,
+          "n_ttf_days": 63
+        },
+        "JJA": {
+          "ttf_eur_mwh": 34.4093,
+          "n_ttf_days": 65
+        },
+        "SON": {
+          "ttf_eur_mwh": 31.7055,
+          "n_ttf_days": 65
+        }
+      },
+      "ttf_annual_eur_mwh": 36.3394,
+      "eua_annual_eur_per_t": 74.288,
+      "eua_by_season": {
+        "DJF": 78.821,
+        "MAM": 68.0062,
+        "JJA": 71.7245,
+        "SON": 78.5468
+      }
+    }
+  }
+}

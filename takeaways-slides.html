@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Takeaways — European Power Pricing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <script src="data-colors.js"></script>
+  <script src="plotly-theme.js"></script>
+  <script src="chart-data.js?v=20260920v17slides"></script>
+  <script src="combined-map.js"></script>
+  <style>
+    :root {
+      --ink: #111827;
+      --muted: #6B7280;
+      --line: #E5E7EB;
+      --paper: #FFFFFF;
+      --wash: #F8FAFC;
+      --blue: #1D4ED8;
+      --green: #16A34A;
+      --red: #DC2626;
+      --orange: #EA580C;
+      --slide-w: 1280px;
+      --slide-h: 720px;
+      --pad-x: 56px;
+      --pad-top: 26px;
+      --pad-bot: 38px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Inter, sans-serif;
+      background: #94A3B8;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.is-booting .deck { opacity: 0.35; }
+    body.is-ready .deck { opacity: 1; transition: opacity 0.2s ease; }
+
+    .deck {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      padding: 24px;
+    }
+
+    .slide {
+      width: var(--slide-w);
+      height: var(--slide-h);
+      background: var(--paper);
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.14);
+      page-break-after: always;
+      break-after: page;
+    }
+
+    .slide:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: var(--pad-top) var(--pad-x) 0;
+    }
+
+    .brand {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+
+    .section {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .main {
+      padding: 12px var(--pad-x) 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 0;
+    }
+
+    .headline {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.28;
+      max-width: 1080px;
+      letter-spacing: -0.01em;
+    }
+
+    .headline--hero { font-size: 23px; }
+
+    .body {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      gap: 16px;
+    }
+
+    .body--split { grid-template-columns: 1.2fr 1fr; }
+    .body--split-rev { grid-template-columns: 1fr 1.2fr; }
+    .body--dual { grid-template-columns: 1fr 1fr; }
+    .body--ttf {
+      grid-template-columns: 1.15fr 0.95fr;
+      grid-template-rows: 1fr auto auto;
+      gap: 12px;
+    }
+    .body--ttf .explain,
+    .body--ttf .takeaway,
+    .body--ttf .notes { grid-column: 1 / -1; }
+    .body--pe {
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .body--im {
+      grid-template-columns: 1.25fr 1fr;
+      grid-template-rows: 1fr auto auto;
+      gap: 14px;
+    }
+    .body--im .takeaway,
+    .body--im .notes { grid-column: 1 / -1; }
+
+    .col {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-height: 0;
+    }
+
+    .col-stack {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 14px;
+      min-height: 0;
+    }
+
+    .panel {
+      background: var(--wash);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      position: relative;
+    }
+
+    .panel-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 6px;
+    }
+
+    .chart {
+      flex: 1;
+      min-height: 0;
+      width: 100%;
+    }
+
+    .chart--map { min-height: 280px; }
+    .chart--pri { min-height: 240px; }
+    .chart--sec { min-height: 120px; }
+    .chart--pe { min-height: 0; flex: 1; }
+    .chart--pe-sm { min-height: 0; flex: 0.72; }
+
+    .takeaway {
+      border-left: 3px solid var(--blue);
+      background: var(--wash);
+      border-radius: 0 8px 8px 0;
+      padding: 13px 18px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .takeaway strong { font-weight: 700; }
+
+    .prose {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--ink);
+    }
+
+    .prose p + p { margin-top: 10px; }
+
+    .explain {
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .explain p + p { margin-top: 8px; }
+
+    .notes {
+      font-size: 11px;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+
+    .notes span + span::before {
+      content: " · ";
+      color: #D1D5DB;
+    }
+
+    sup.ast {
+      font-size: 0.7em;
+      font-weight: 600;
+      color: var(--blue);
+      top: -0.35em;
+    }
+
+    .callout {
+      background: var(--wash);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px 18px;
+    }
+
+    .callout-k {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 6px;
+    }
+
+    .callout-v {
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--blue);
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+    }
+
+    .callout-s {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .mini {
+      background: var(--wash);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+
+    .mini-k {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+
+    .mini-v {
+      font-size: 22px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      margin-top: 4px;
+    }
+
+    .mini-s { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+    .year-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .year-chip {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .year-chip strong {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+
+    .year-chip span {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+    }
+
+    .year-chip em {
+      font-style: normal;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .delta-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .delta {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .delta-k {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .delta-v {
+      font-size: 18px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      color: var(--ink);
+    }
+
+    /* Financing panels */
+    .pe-card {
+      background: var(--wash);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 0;
+    }
+
+    .pe-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .pe-mode {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+
+    .pe-npv {
+      font-size: 28px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+    }
+
+    .pe-npv.is-pos { color: var(--green); }
+    .pe-npv.is-neg { color: var(--red); }
+
+    .pe-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 18px;
+      font-size: 12.5px;
+    }
+
+    .pe-meta .k { color: var(--muted); }
+    .pe-meta .v { font-weight: 600; font-variant-numeric: tabular-nums; }
+
+    .pe-charts {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .pe-charts .panel {
+      padding: 10px 12px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .pe-charts .panel--sm {
+      flex: 0.75;
+    }
+
+    /* Sensitivity */
+    .sensi {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+      min-height: 0;
+      overflow: auto;
+      padding: 2px;
+    }
+
+    .sensi-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .sensi-label strong { font-size: 13px; display: block; }
+    .sensi-label span { font-size: 11px; color: var(--muted); }
+
+    .sensi-cells {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+    }
+
+    .sensi-cell {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 8px 4px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .sensi-cell.is-base {
+      outline: 2px solid var(--ink);
+      outline-offset: -2px;
+      font-weight: 700;
+    }
+
+    .sensi-shock { font-size: 10px; color: var(--muted); }
+    .sensi-val { font-size: 12.5px; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+    .gap-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .gap {
+      background: var(--wash);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+
+    .gap-k {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+
+    .gap-v {
+      font-size: 24px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      margin-top: 4px;
+    }
+
+    .gap-v.is-neg { color: var(--red); }
+    .gap-v.is-pos { color: var(--green); }
+    .gap-s { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+    .foot {
+      height: var(--pad-bot);
+      border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr auto;
+      align-items: center;
+      gap: 16px;
+      padding: 0 var(--pad-x);
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .foot-a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .foot-a:hover { text-decoration: underline; }
+    .foot-a.is-later {
+      color: var(--muted);
+      font-weight: 500;
+      cursor: default;
+    }
+    .foot-linkedin { text-align: left; }
+    .foot-web { text-align: center; }
+    .foot-email { text-align: right; }
+    .foot-num {
+      text-align: right;
+      font-weight: 600;
+      color: var(--blue);
+      letter-spacing: 0.04em;
+      min-width: 3.5em;
+    }
+
+    #boot-error {
+      position: fixed; left: 16px; bottom: 16px; z-index: 40;
+      background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA;
+      padding: 10px 14px; border-radius: 4px; font-size: 13px; max-width: 420px;
+    }
+
+    @media print {
+      @page { size: 1280px 720px; margin: 0; }
+      /* Chromium print-to-PDF drops some glyphs from the Inter webfont
+         subset (notably "(" and "+"). Force a full system face for export. */
+      body,
+      body * {
+        font-family: Helvetica, Arial, "Helvetica Neue", sans-serif !important;
+      }
+      body { background: #fff; }
+      .deck { padding: 0; gap: 0; }
+      .slide { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div id="boot-error" hidden></div>
+  <div class="deck">
+
+    <!-- 1 -->
+    <section class="slide" data-slide="1">
+      <div class="top">
+        <div class="brand">European Power · Takeaways</div>
+        <div class="section">The big idea</div>
+      </div>
+      <div class="main">
+        <h1 class="headline headline--hero">The plants that set Europe’s electricity price can no longer earn a good living from doing it.</h1>
+        <div class="body body--split">
+          <div class="panel">
+            <div class="panel-label">Where Europe’s gas arrives from</div>
+            <div id="slide1-map" class="chart chart--map"></div>
+          </div>
+          <div class="col">
+            <div class="prose">
+              <p>When there is a lot of sun and wind at once, solar and wind farms sell into cheap hours and undercut each other. At the same time, a wave of new gas-export terminals<sup class="ast">*</sup> is locking in cheaper gas for years ahead.</p>
+              <p>Gas shipped from the US and Qatar still matters a lot: gas-fired plants are often the last ones needed to keep the lights on, so the gas price still sets the electricity price in many hours.</p>
+            </div>
+            <div class="takeaway">
+              <strong>In short:</strong> more renewables and cheaper gas are both pushing the same electricity price lower. The next slides show how — and what that means for people who put money into power plants.
+            </div>
+            <div class="notes">
+              <span><sup class="ast">*</sup>LNG terminals: places that ship natural gas in liquid form across the ocean.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="foot">
+        <a class="foot-a foot-linkedin" href="https://www.linkedin.com/in/raphaelgpichon/" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="foot-a foot-web is-later">Website</span>
+        <a class="foot-a foot-email" href="mailto:r.pichon@lse.ac.uk">r.pichon@lse.ac.uk</a>
+        <div class="foot-num">01 / 07</div>
+      </footer>
+    </section>
+
+    <!-- 2 -->
+    <section class="slide" data-slide="2">
+      <div class="top">
+        <div class="brand">European Power · Takeaways</div>
+        <div class="section">When solar undercuts itself</div>
+      </div>
+      <div class="main">
+        <h1 class="headline">In Spain, solar already earns only about 61 cents for every euro of the average market price.</h1>
+        <div class="body body--split">
+          <div class="panel">
+              <div class="panel-label">What solar actually receives vs the average price<sup class="ast">*</sup></div>
+            <div id="slide2-mvf" class="chart chart--pri"></div>
+          </div>
+          <div class="col">
+            <div class="callout">
+              <div class="callout-k">Spanish solar · 2025</div>
+              <div class="callout-v" id="slide2-mvf-stat">—</div>
+              <div class="callout-s" id="slide2-mvf-sub">Loading…</div>
+            </div>
+            <div class="prose">
+              <p>Solar produces most when the sun is out — and so does every other solar farm. In those hours the market price falls, so solar sells cheap. The dots are real market outcomes for solar in Spain and Germany; the dashed line is an older textbook curve for <em>wind</em>, shown only as a comparison.</p>
+              <p>Spain’s 2025 average (0.61) and its worst month (0.40) sit well below what older business plans assumed.</p>
+            </div>
+            <div class="takeaway"><strong>In short:</strong> plans that assume solar will earn close to the full average market price are describing a market that no longer exists.</div>
+            <div class="notes">
+              <span><sup class="ast">*</sup>Share of the average price received = solar’s € per MWh ÷ the market’s average € per MWh. Dashed line: Hirth (2013) wind curve, for comparison — not a solar forecast.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="foot">
+        <a class="foot-a foot-linkedin" href="https://www.linkedin.com/in/raphaelgpichon/" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="foot-a foot-web is-later">Website</span>
+        <a class="foot-a foot-email" href="mailto:r.pichon@lse.ac.uk">r.pichon@lse.ac.uk</a>
+        <div class="foot-num">02 / 07</div>
+      </footer>
+    </section>
+
+    <!-- 3 -->
+    <section class="slide" data-slide="3">
+      <div class="top">
+        <div class="brand">European Power · Takeaways</div>
+        <div class="section">Cheaper gas ahead</div>
+      </div>
+      <div class="main">
+        <h1 class="headline">Today’s gas spikes are temporary. Markets already expect gas near €20 later this decade.</h1>
+        <div class="body body--ttf">
+          <div class="panel">
+            <div class="panel-label">What buyers lock in today for gas in the years ahead<sup class="ast">*</sup></div>
+            <div id="slide3-ttf" class="chart chart--pri"></div>
+          </div>
+          <div class="col-stack">
+            <div class="panel">
+              <div class="panel-label">Where US gas exports went in 2025</div>
+              <div id="slide3-dest" class="chart chart--sec"></div>
+            </div>
+            <div class="panel">
+              <div class="panel-label">How much gas Europe imported by ship</div>
+              <div id="slide3-eu" class="chart chart--sec"></div>
+            </div>
+          </div>
+          <div class="explain">
+            <p>Short-term scares (a blocked shipping lane, a cold winter) can still push today’s price up. Looking further out, the market expects much lower prices — because a huge amount of new US export capacity has already been approved and is being built. Europe was the main destination for those US cargoes in 2025.</p>
+          </div>
+          <div class="takeaway">
+            <strong>In short:</strong> by 2030, European gas is expected to settle near the cost of producing and shipping US gas (€15 to €22 per MWh<sup class="ast">†</sup>) — not near today’s crisis levels.
+          </div>
+          <div class="notes">
+            <span><sup class="ast">*</sup>The blue line is the main European gas benchmark (TTF): prices agreed today for delivery later.</span>
+            <span><sup class="ast">†</sup>MWh = megawatt-hour, a standard unit of energy. The shaded band is a rough cost floor for US gas delivered to Europe.</span>
+          </div>
+        </div>
+      </div>
+      <footer class="foot">
+        <a class="foot-a foot-linkedin" href="https://www.linkedin.com/in/raphaelgpichon/" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="foot-a foot-web is-later">Website</span>
+        <a class="foot-a foot-email" href="mailto:r.pichon@lse.ac.uk">r.pichon@lse.ac.uk</a>
+        <div class="foot-num">03 / 07</div>
+      </footer>
+    </section>
+
+    <!-- 4 -->
+    <section class="slide" data-slide="4">
+      <div class="top">
+        <div class="brand">European Power · Takeaways</div>
+        <div class="section">Why both matter together</div>
+      </div>
+      <div class="main">
+        <h1 class="headline">Five years on, the average electricity price is roughly half — without inventing a new crisis.</h1>
+        <div class="body body--im">
+          <div class="panel">
+            <div class="year-pair">
+              <div class="year-chip">
+                <strong>2025</strong>
+                <span id="slide4-price-2025">—</span>
+                <em>average electricity price</em>
+              </div>
+              <div class="year-chip">
+                <strong>2030</strong>
+                <span id="slide4-price-2030">—</span>
+                <em>average electricity price</em>
+              </div>
+            </div>
+            <div class="panel-label">Who sets the price, and how often<sup class="ast">*</sup></div>
+            <div id="slide4-compare" class="chart" style="min-height:200px;flex:1"></div>
+          </div>
+          <div class="col">
+            <div class="explain">
+              <p>Two things happen at once on the chart: more hours where power is free or even negative, and fewer hours where gas plants set the price. Cheaper gas reinforces that second shift — but the picture here is about <em>who sets the price and how often</em>, not the running cost itself.</p>
+            </div>
+            <div class="delta-stack">
+              <div class="delta"><div class="delta-k">Average price</div><div class="delta-v" id="slide4-d-price">—</div></div>
+              <div class="delta"><div class="delta-k">Hours with free / negative prices</div><div class="delta-v" id="slide4-d-neg">—</div></div>
+              <div class="delta"><div class="delta-k">Hours when gas sets the price</div><div class="delta-v" id="slide4-d-gas">—</div></div>
+            </div>
+          </div>
+          <div class="takeaway">
+            <strong>In short:</strong> more solar/wind and cheaper gas are not two stories that cancel out. They both push the electricity price down.
+          </div>
+          <div class="notes">
+            <span><sup class="ast">*</sup>In each hour, the most expensive plant still needed sets the price everyone receives.</span>
+          </div>
+        </div>
+      </div>
+      <footer class="foot">
+        <a class="foot-a foot-linkedin" href="https://www.linkedin.com/in/raphaelgpichon/" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="foot-a foot-web is-later">Website</span>
+        <a class="foot-a foot-email" href="mailto:r.pichon@lse.ac.uk">r.pichon@lse.ac.uk</a>
+        <div class="foot-num">04 / 07</div>
+      </footer>
+    </section>
+
+    <!-- 5 -->
+    <section class="slide" data-slide="5">
+      <div class="top">
+        <div class="brand">European Power · Takeaways</div>
+        <div class="section">Do contracts fix this?</div>
+      </div>
+      <div class="main">
+        <h1 class="headline">Long-term power contracts help a project get a loan — but solar and onshore wind still clear below the cost of building.</h1>
+        <div class="body body--split">
+          <div class="panel">
+            <div class="panel-label">What buyers are paying vs what builders need to break even</div>
+            <div id="slide5-ppa" class="chart chart--pri"></div>
+          </div>
+          <div class="col">
+            <div class="prose">
+              <p>Governments and big buyers can offer fixed-price deals<sup class="ast">*</sup> so a wind or solar farm can get a bank loan. Look at the chart: solar and onshore sit clearly below the “builders need” bar; offshore German wind only just clears it.</p>
+            </div>
+            <div class="gap-row" style="grid-template-columns:1fr">
+              <div class="gap"><div class="gap-k">Solar</div><div class="gap-v" id="slide5-g0">—</div><div class="gap-s">below what it costs to build</div></div>
+              <div class="gap"><div class="gap-k">Onshore wind</div><div class="gap-v" id="slide5-g1">—</div><div class="gap-s">below what it costs to build</div></div>
+              <div class="gap"><div class="gap-k">Offshore wind (Germany)</div><div class="gap-v" id="slide5-g2">—</div><div class="gap-s">only just covers the cost of building</div></div>
+            </div>
+            <div class="takeaway">
+              <strong>In short:</strong> solar and onshore still pay less than it costs to build; offshore is right on the edge. A fixed-price contract can rescue one project — it does not lift the open market for everyone else.
+            </div>
+            <div class="notes">
+              <span><sup class="ast">*</sup>Often called a PPA (a long-term sale of electricity) or a CfD (a government-backed price guarantee).</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="foot">
+        <a class="foot-a foot-linkedin" href="https://www.linkedin.com/in/raphaelgpichon/" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="foot-a foot-web is-later">Website</span>
+        <a class="foot-a foot-email" href="mailto:r.pichon@lse.ac.uk">r.pichon@lse.ac.uk</a>
+        <div class="foot-num">05 / 07</div>
+      </footer>
+    </section>
+
+    <!-- 6 -->
+    <section class="slide" data-slide="6">
+      <div class="top">
+        <div class="brand">European Power · Takeaways</div>
+        <div class="section">Who still makes money</div>
+      </div>
+      <div class="main">
+        <h1 class="headline">A gas plant that is already built can still be worth something. Building a new one destroys hundreds of millions in value.</h1>
+        <div class="body body--pe">
+          <div class="pe-card">
+            <div class="pe-head">
+              <div class="pe-mode">Already built</div>
+              <div class="pe-npv is-pos" id="pe0-npv">—</div>
+            </div>
+            <div class="pe-meta">
+              <div><span class="k">Investor return<sup class="ast">*</sup></span> <span class="v" id="pe0-irr">—</span></div>
+              <div><span class="k">Operating profit</span> <span class="v" id="pe0-cf">—</span></div>
+            </div>
+            <div class="pe-charts">
+              <div class="panel">
+                <div class="panel-label">Revenue &amp; operating profit</div>
+                <div id="pe0-revenue" class="chart chart--pe"></div>
+              </div>
+            </div>
+          </div>
+          <div class="pe-card">
+            <div class="pe-head">
+              <div class="pe-mode">Still to be built</div>
+              <div class="pe-npv is-neg" id="pe1-npv">—</div>
+            </div>
+            <div class="pe-meta">
+              <div><span class="k">Revenue path</span> <span class="v" id="pe1-cum">—</span></div>
+              <div><span class="k">Operating profit</span> <span class="v" id="pe1-dscr-stat">—</span></div>
+            </div>
+            <div class="pe-charts">
+              <div class="panel">
+                <div class="panel-label">Revenue &amp; operating profit</div>
+                <div id="pe1-revenue" class="chart chart--pe"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="takeaway">
+          <strong>In short:</strong> once running, both plants show the same profile — revenue remains sizeable, operating profit is already thin. The existing asset can still clear a positive equity value because construction is sunk. The new build cannot recover that outlay on this price path.
+        </div>
+        <div class="notes">
+          <span>Headline figures = present value of equity cash flows.</span>
+          <span><sup class="ast">*</sup>Equity IRR vs a 6% cost of equity.</span>
+        </div>
+      </div>
+      <footer class="foot">
+        <a class="foot-a foot-linkedin" href="https://www.linkedin.com/in/raphaelgpichon/" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="foot-a foot-web is-later">Website</span>
+        <a class="foot-a foot-email" href="mailto:r.pichon@lse.ac.uk">r.pichon@lse.ac.uk</a>
+        <div class="foot-num">06 / 07</div>
+      </footer>
+    </section>
+
+    <!-- 7 -->
+    <section class="slide" data-slide="7">
+      <div class="top">
+        <div class="brand">European Power · Takeaways</div>
+        <div class="section">Can tweaks save a new build?</div>
+      </div>
+      <div class="main">
+        <h1 class="headline">Changing costs, efficiency, or how much is borrowed moves the numbers — not enough to make a new plant work.</h1>
+        <div class="body" style="grid-template-rows:auto 1fr auto auto;gap:10px">
+          <div class="explain">
+            <p>Each row asks: if we change only this one assumption, how much cash does the owner have by 2049? The middle column is the starting point. Green = better; red = worse.</p>
+          </div>
+          <div class="panel" style="overflow:auto;min-height:0">
+            <div class="panel-label">Cash to investors by 2049 · change one assumption at a time</div>
+            <div class="sensi" id="slide7-grid"></div>
+          </div>
+          <div class="takeaway">
+            <strong>In short:</strong> for a plant already running, the base case is still positive (<span id="slide7-base">—</span>). For a new build, whether you borrow 40% or 80%, cash stays deeply negative. The loan terms are not the main problem — the price outlook is.
+          </div>
+          <div class="notes">
+            <span>Bottom row forces a new-build case on purpose.</span>
+            <span>“Share borrowed” = how much of the project is paid with bank debt instead of investor money.</span>
+          </div>
+        </div>
+      </div>
+      <footer class="foot">
+        <a class="foot-a foot-linkedin" href="https://www.linkedin.com/in/raphaelgpichon/" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="foot-a foot-web is-later">Website</span>
+        <a class="foot-a foot-email" href="mailto:r.pichon@lse.ac.uk">r.pichon@lse.ac.uk</a>
+        <div class="foot-num">07 / 07</div>
+      </footer>
+    </section>
+  </div>
+
+  <style>
+    /* Compact presentation state bars — not dashboard widgets */
+    .im-bar {
+      display: flex;
+      width: 100%;
+      height: 72px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+    .im-bar-seg {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8px 10px;
+      min-width: 0;
+      gap: 1px;
+    }
+    .im-bar-seg--neg { background: #DBEAFE; color: #1E3A8A; }
+    .im-bar-seg--res { background: #F3F4F6; color: #374151; }
+    .im-bar-seg--gas { background: #FFEDD5; color: #9A3412; }
+    .im-bar-seg .l { font-size: 9px; font-weight: 600; opacity: 0.85; }
+    .im-bar-seg .p { font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; }
+    .im-bar-seg .s { font-size: 10px; opacity: 0.85; }
+  </style>
+
+  <script type="module" src="takeaways-slides.js?v=20260920s6same"></script>
+</body>
+</html>

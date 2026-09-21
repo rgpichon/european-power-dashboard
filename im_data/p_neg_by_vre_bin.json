@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "unit": "EUR/MWh",
+    "definition": "empirical median DA price in hours with DA<=0, by parent block VRE bin; 0 if n<30",
+    "source": "delta_by_vre_bin.csv (p_neg columns; no separate p_neg CSV)",
+    "note": "P_neg lives in the same calibration CSV as delta — split here for JS clarity"
+  },
+  "bins": [
+    {
+      "vre_bin_left": 0,
+      "vre_bin": "0-10",
+      "p_neg_eur_mwh": 0.0,
+      "p_neg_flag": "insufficient_neg_hours_use_0",
+      "n_negative_hours": 0
+    },
+    {
+      "vre_bin_left": 10,
+      "vre_bin": "10-20",
+      "p_neg_eur_mwh": 0.0,
+      "p_neg_flag": "insufficient_neg_hours_use_0",
+      "n_negative_hours": 0
+    },
+    {
+      "vre_bin_left": 20,
+      "vre_bin": "20-30",
+      "p_neg_eur_mwh": 0.0,
+      "p_neg_flag": "insufficient_neg_hours_use_0",
+      "n_negative_hours": 0
+    },
+    {
+      "vre_bin_left": 30,
+      "vre_bin": "30-40",
+      "p_neg_eur_mwh": 0.0,
+      "p_neg_flag": "insufficient_neg_hours_use_0",
+      "n_negative_hours": 0
+    },
+    {
+      "vre_bin_left": 40,
+      "vre_bin": "40-50",
+      "p_neg_eur_mwh": 0.0,
+      "p_neg_flag": "insufficient_neg_hours_use_0",
+      "n_negative_hours": 13
+    },
+    {
+      "vre_bin_left": 50,
+      "vre_bin": "50-60",
+      "p_neg_eur_mwh": -2.64,
+      "p_neg_flag": "ok",
+      "n_negative_hours": 170
+    },
+    {
+      "vre_bin_left": 60,
+      "vre_bin": "60-70",
+      "p_neg_eur_mwh": -0.97,
+      "p_neg_flag": "ok",
+      "n_negative_hours": 408
+    },
+    {
+      "vre_bin_left": 70,
+      "vre_bin": "70-80",
+      "p_neg_eur_mwh": -1.98,
+      "p_neg_flag": "ok",
+      "n_negative_hours": 1002
+    },
+    {
+      "vre_bin_left": 80,
+      "vre_bin": "80-90",
+      "p_neg_eur_mwh": -4.93,
+      "p_neg_flag": "ok",
+      "n_negative_hours": 117
+    },
+    {
+      "vre_bin_left": 90,
+      "vre_bin": "90-100+",
+      "p_neg_eur_mwh": 0.0,
+      "p_neg_flag": "insufficient_neg_hours_use_0",
+      "n_negative_hours": 0
+    }
+  ]
+}

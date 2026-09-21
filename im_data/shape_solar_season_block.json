@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "unit": "normalized_share",
+    "sums_to": 1.000001,
+    "index": [
+      "season",
+      "block"
+    ],
+    "source": "shape_solar_season_block.csv"
+  },
+  "cells": [
+    {
+      "season": "DJF",
+      "block": "night",
+      "share": 3.2e-05
+    },
+    {
+      "season": "DJF",
+      "block": "morning",
+      "share": 0.03299
+    },
+    {
+      "season": "DJF",
+      "block": "afternoon",
+      "share": 0.046858
+    },
+    {
+      "season": "DJF",
+      "block": "evening",
+      "share": 4.5e-05
+    },
+    {
+      "season": "MAM",
+      "block": "night",
+      "share": 0.000117
+    },
+    {
+      "season": "MAM",
+      "block": "morning",
+      "share": 0.122189
+    },
+    {
+      "season": "MAM",
+      "block": "afternoon",
+      "share": 0.190648
+    },
+    {
+      "season": "MAM",
+      "block": "evening",
+      "share": 0.010988
+    },
+    {
+      "season": "JJA",
+      "block": "night",
+      "share": 0.000394
+    },
+    {
+      "season": "JJA",
+      "block": "morning",
+      "share": 0.146324
+    },
+    {
+      "season": "JJA",
+      "block": "afternoon",
+      "share": 0.244596
+    },
+    {
+      "season": "JJA",
+      "block": "evening",
+      "share": 0.024073
+    },
+    {
+      "season": "SON",
+      "block": "night",
+      "share": 5.7e-05
+    },
+    {
+      "season": "SON",
+      "block": "morning",
+      "share": 0.066443
+    },
+    {
+      "season": "SON",
+      "block": "afternoon",
+      "share": 0.112298
+    },
+    {
+      "season": "SON",
+      "block": "evening",
+      "share": 0.001949
+    }
+  ]
+}

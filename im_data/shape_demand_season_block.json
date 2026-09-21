@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "load_energy_share_sums_to": 0.999998,
+    "demand_energy_mwh_is": "base-year (2025) cell energy = demand_base_TWh × load_energy_share",
+    "column_note": "annual_demand_mwh_used here = demand_base_twh × 1e6 (2025 alone). The old equal-weighted 476.7 TWh figure is SUPERSEDED. For future years scale demand_energy_mwh by (1+g)^(N-2025).",
+    "missing_from_csv": "CSV no longer has annual_demand_mwh_used (renamed to demand_base_twh/demand_base_year after base-year+growth fix); exported as alias of base total.",
+    "source": "shape_demand_season_block.csv"
+  },
+  "cells": [
+    {
+      "season": "DJF",
+      "block": "night",
+      "load_energy_share": 0.055308,
+      "demand_energy_mwh": 26031402.5,
+      "demand_base_twh": 470.661147,
+      "demand_base_year": 2025,
+      "load_mw_mean": 48676.5,
+      "annual_demand_mwh_used": 470661147.0
+    },
+    {
+      "season": "DJF",
+      "block": "morning",
+      "load_energy_share": 0.070749,
+      "demand_energy_mwh": 33299035.1,
+      "demand_base_twh": 470.661147,
+      "demand_base_year": 2025,
+      "load_mw_mean": 62260.6,
+      "annual_demand_mwh_used": 470661147.0
+    },
+    {
+      "season": "DJF",
+      "block": "afternoon",
+      "load_energy_share": 0.072743,
+      "demand_energy_mwh": 34237404.3,
+      "demand_base_twh": 470.661147,
+      "demand_base_year": 2025,
+      "load_mw_mean": 64012.7,
+      "annual_demand_mwh_used": 470661147.0
+    },
+    {
+      "season": "DJF",
+      "block": "evening",
+      "load_energy_share": 0.068064,
+      "demand_energy_mwh": 32035031.6,
+      "demand_base_twh": 470.661147,
+      "demand_base_year": 2025,
+      "load_mw_mean": 59903.2,
+      "annual_demand_mwh_used": 470661147.0
+    },
+    {
+      "season": "MAM",
+      "block": "night",
+      "load_energy_share": 0.050914,
+      "demand_energy_mwh": 23963236.0,
+      "demand_base_twh": 470.661147,
+      "demand_base_year": 2025,
+      "load_mw_mean": 44046.4,
+      "annual_demand_mwh_used": 470661147.0
+    },
+    {
+      "season": "MAM",
+      "block": "morning",
+      "load_energy_share": 0.066263,
+      "demand_energy_mwh": 31187453.4,
+      "demand_base_twh": 470.661147,
+      "demand_base_year": 2025,
+      "load_mw_mean": 57228.8,
+      "annual_demand_mwh_used": 470661147.0
+    },
+    {
+      "season": "MAM",
+      "block": "afternoon",
+      "load_energy_share": 0.066086,
+      "demand_energy_mwh": 31103996.9,
+      "demand_base_twh": 470.661147,
+      "demand_base_year": 2025,
+      "load_mw_mean": 57087.8,
+      "annual_demand_mwh_used": 470661147.0
+    },
+    {
+      "season": "MAM",
+      "block": "evening",
+      "load_energy_share": 0.062699,
+      "demand_energy_mwh": 29510118.0,
+      "demand_base_twh": 470.661147,
+      "demand_base_year": 2025,
+      "load_mw_mean": 54148.3,
+      "annual_demand_mwh_used": 470661147.0
+    },
+    {
+      "season": "JJA",
+      "block": "night",
+      "load_energy_share": 0.048045,
+      "demand_energy_mwh": 22613027.9,
+      "demand_base_twh": 470.661147,
+      "demand_base_year": 2025,
+      "load_mw_mean": 41489.0,
+      "annual_demand_mwh_used": 470661147.0
+    },
+    {
+      "season": "JJA",
+      "block": "morning",
+      "load_energy_share": 0.063283,
+      "demand_energy_mwh": 29784952.7,
+      "demand_base_twh": 470.661147,
+      "demand_base_year": 2025,
+      "load_mw_mean": 54658.3,
+      "annual_demand_mwh_used": 470661147.0
+    },
+    {
+      "season": "JJA",
+      "block": "afternoon",
+      "load_energy_share": 0.064397,
+      "demand_energy_mwh": 30309396.0,
+      "demand_base_twh": 470.661147,
+      "demand_base_year": 2025,
+      "load_mw_mean": 55638.3,
+      "annual_demand_mwh_used": 470661147.0
+    },
+    {
+      "season": "JJA",
+      "block": "evening",
+      "load_energy_share": 0.059459,
+      "demand_energy_mwh": 27985245.2,
+      "demand_base_twh": 470.661147,
+      "demand_base_year": 2025,
+      "load_mw_mean": 51347.9,
+      "annual_demand_mwh_used": 470661147.0
+    },
+    {
+      "season": "SON",
+      "block": "night",
+      "load_energy_share": 0.051093,
+      "demand_energy_mwh": 24047255.0,
+      "demand_base_twh": 470.661147,
+      "demand_base_year": 2025,
+      "load_mw_mean": 44516.8,
+      "annual_demand_mwh_used": 470661147.0
+    },
+    {
+      "season": "SON",
+      "block": "morning",
+      "load_energy_share": 0.067975,
+      "demand_energy_mwh": 31993068.9,
+      "demand_base_twh": 470.661147,
+      "demand_base_year": 2025,
+      "load_mw_mean": 59336.8,
+      "annual_demand_mwh_used": 470661147.0
+    },
+    {
+      "season": "SON",
+      "block": "afternoon",
+      "load_energy_share": 0.068845,
+      "demand_energy_mwh": 32402868.8,
+      "demand_base_twh": 470.661147,
+      "demand_base_year": 2025,
+      "load_mw_mean": 60103.8,
+      "annual_demand_mwh_used": 470661147.0
+    },
+    {
+      "season": "SON",
+      "block": "evening",
+      "load_energy_share": 0.064075,
+      "demand_energy_mwh": 30157654.7,
+      "demand_base_twh": 470.661147,
+      "demand_base_year": 2025,
+      "load_mw_mean": 55932.5,
+      "annual_demand_mwh_used": 470661147.0
+    }
+  ]
+}

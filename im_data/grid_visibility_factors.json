@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "definition": "grid_visible_generation = nameplate_GW \u00d7 visibility_factor \u00d7 yield_anchor \u00d7 shape. User-facing capacity input remains nameplate; factor applied internally only.",
+    "formula_effective_gw": "ENTSO-E_gen_MWh / yield_anchor_MWh_per_MW / 1000",
+    "solar": {
+      "visibility_factor": 0.696997,
+      "lock_method": "mean of 2024\u20132025 (effective_GW @ 1000 kWh/kWp \u00f7 Ember nameplate)",
+      "interpretation": "Rooftop/self-consumption invisible to TSO metering; ~30% of nameplate does not reach wholesale-visible generation.",
+      "classic_citation": "63.44/91.20 (2024) = 0.6957 \u2014 matches prior ~63.4/91.2 note"
+    },
+    "wind": {
+      "visibility_factor": 1.0,
+      "lock_method": "set to 1.0 after investigation",
+      "interpretation": "Wind is almost entirely utility-scale and grid-visible. 2024 ratio 0.953 \u2248 1.0 (small capacity-timing/yield gap vs 2000 FLH). 2025 ratio 0.857 reflects a low-wind year (implied 1715 FLH), not metering invisibility \u2014 must not be conflated with solar's rooftop gap. Weather/timing handled by windYearType \u00b15%, not visibility."
+    },
+    "by_year": {
+      "2024": {
+        "solar_nameplate_gw": 91.2,
+        "solar_effective_gw_at_1000_kwh_kwp": 63.444,
+        "solar_visibility_ratio": 0.695658,
+        "wind_nameplate_gw": 72.74,
+        "wind_effective_gw_at_2000_flh": 69.3362,
+        "wind_visibility_ratio": 0.953206,
+        "implied_solar_kwh_kwp": 695.7,
+        "implied_wind_flh": 1906.4
+      },
+      "2025": {
+        "solar_nameplate_gw": 106.27,
+        "solar_effective_gw_at_1000_kwh_kwp": 74.2121,
+        "solar_visibility_ratio": 0.698335,
+        "wind_nameplate_gw": 77.81,
+        "wind_effective_gw_at_2000_flh": 66.714,
+        "wind_visibility_ratio": 0.857396,
+        "implied_solar_kwh_kwp": 698.3,
+        "implied_wind_flh": 1714.8
+      }
+    },
+    "v1_simplification": true
+  },
+  "solar_visibility_factor": 0.696997,
+  "wind_visibility_factor": 1.0
+}

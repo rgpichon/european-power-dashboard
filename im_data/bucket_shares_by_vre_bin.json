@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "definition": "Clean-year (2019,2023-2025) mean gas_setting_share / negative_share by 10pp VRE bin \u2014 used as scenario s_gas / s_neg when hour-level flags are unavailable. s_res = 1 - s_gas - s_neg.",
+    "source": "vre_block_panel_DE_LU.csv",
+    "pricing_mechanism_ref": "Pricing mechanism v1.md \u00a75\u20136; bin-average shares per \u00a79"
+  },
+  "bins": [
+    {
+      "vre_bin_left": 0,
+      "vre_bin": "0-10",
+      "s_gas": 0.345886,
+      "s_neg": 0.0,
+      "s_res": 0.654114,
+      "n_blocks": 239,
+      "lock_flag": "ok"
+    },
+    {
+      "vre_bin_left": 10,
+      "vre_bin": "10-20",
+      "s_gas": 0.350389,
+      "s_neg": 0.0,
+      "s_res": 0.649611,
+      "n_blocks": 772,
+      "lock_flag": "ok"
+    },
+    {
+      "vre_bin_left": 20,
+      "vre_bin": "20-30",
+      "s_gas": 0.409388,
+      "s_neg": 0.0,
+      "s_res": 0.590612,
+      "n_blocks": 909,
+      "lock_flag": "ok"
+    },
+    {
+      "vre_bin_left": 30,
+      "vre_bin": "30-40",
+      "s_gas": 0.471587,
+      "s_neg": 0.0,
+      "s_res": 0.528413,
+      "n_blocks": 962,
+      "lock_flag": "ok"
+    },
+    {
+      "vre_bin_left": 40,
+      "vre_bin": "40-50",
+      "s_gas": 0.491644,
+      "s_neg": 0.00229,
+      "s_res": 0.506066,
+      "n_blocks": 946,
+      "lock_flag": "ok"
+    },
+    {
+      "vre_bin_left": 50,
+      "vre_bin": "50-60",
+      "s_gas": 0.367683,
+      "s_neg": 0.029718,
+      "s_res": 0.602599,
+      "n_blocks": 951,
+      "lock_flag": "ok"
+    },
+    {
+      "vre_bin_left": 60,
+      "vre_bin": "60-70",
+      "s_gas": 0.196992,
+      "s_neg": 0.100486,
+      "s_res": 0.702522,
+      "n_blocks": 676,
+      "lock_flag": "ok"
+    },
+    {
+      "vre_bin_left": 70,
+      "vre_bin": "70-80",
+      "s_gas": 0.068306,
+      "s_neg": 0.456284,
+      "s_res": 0.47541,
+      "n_blocks": 366,
+      "lock_flag": "ok"
+    },
+    {
+      "vre_bin_left": 80,
+      "vre_bin": "80-90",
+      "s_gas": 0.0,
+      "s_neg": 0.847826,
+      "s_res": 0.152174,
+      "n_blocks": 23,
+      "lock_flag": "ok"
+    },
+    {
+      "vre_bin_left": 90,
+      "vre_bin": "90-100+",
+      "s_gas": 0.0,
+      "s_neg": 0.847826,
+      "s_res": 0.152174,
+      "n_blocks": 0,
+      "lock_flag": "filled_from_neighbour"
+    }
+  ]
+}

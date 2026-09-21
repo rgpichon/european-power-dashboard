@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "as_of": "2026-07-17",
+    "as_of_label": "17 July 2026",
+    "source": "ICE Endex EUA Futures (CKZ) end-of-day settlements via Barchart historical API, locked same vintage as TTF",
+    "unit": "EUR/t",
+    "convention": "Calendar-year EUA for scenario year Y = Dec-Y settlement on lock date (standard annual carbon hedge)",
+    "note": "Independent of TTF — do not infer direction from the gas curve. Continuous front-month CSV on this date equals Dec-26 (79.11)."
+  },
+  "spot": {
+    "date": "2026-07-17",
+    "eua_eur_per_t": 79.11,
+    "contract": "CKZ26",
+    "note": "Dec-26 EOD last = continuous carbon futures close on lock date (first curve point)."
+  },
+  "beyond_curve": {
+    "last_curve_year": 2032,
+    "real_anchor_contract": "CKZ32",
+    "real_anchor_month": "2032-12",
+    "real_eua_eur_per_t": 97.63,
+    "note": "Real-flat at Dec-2032 locked settlement. Nominal path: real × (1+inflation)^(year−2032). Same inflation convention as ttf_forward_curve.beyond_curve.",
+    "inflation_rate": 0.02,
+    "inflation_rate_source": "ECB ~2% target placeholder — same parameter family as TTF beyond_curve.inflation_rate; not a forecast"
+  },
+  "curve": [
+    {
+      "year": 2026,
+      "month": "2026-12",
+      "contract": "CKZ26",
+      "eua_eur_per_t": 79.11,
+      "volume": 35390,
+      "liquidity": "liquid"
+    },
+    {
+      "year": 2027,
+      "month": "2027-12",
+      "contract": "CKZ27",
+      "eua_eur_per_t": 81.89,
+      "volume": 2804,
+      "liquidity": "liquid"
+    },
+    {
+      "year": 2028,
+      "month": "2028-12",
+      "contract": "CKZ28",
+      "eua_eur_per_t": 84.78,
+      "volume": 537,
+      "liquidity": "liquid"
+    },
+    {
+      "year": 2029,
+      "month": "2029-12",
+      "contract": "CKZ29",
+      "eua_eur_per_t": 88.03,
+      "volume": 102,
+      "liquidity": "thin"
+    },
+    {
+      "year": 2030,
+      "month": "2030-12",
+      "contract": "CKZ30",
+      "eua_eur_per_t": 91.43,
+      "volume": 0,
+      "liquidity": "settlement_only_on_lock_date"
+    },
+    {
+      "year": 2031,
+      "month": "2031-12",
+      "contract": "CKZ31",
+      "eua_eur_per_t": 94.53,
+      "volume": 0,
+      "liquidity": "settlement_only_on_lock_date"
+    },
+    {
+      "year": 2032,
+      "month": "2032-12",
+      "contract": "CKZ32",
+      "eua_eur_per_t": 97.63,
+      "volume": 0,
+      "liquidity": "settlement_only_on_lock_date"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "unit": "normalized_share",
+    "sums_to": 1.000002,
+    "index": [
+      "season",
+      "block"
+    ],
+    "source": "shape_wind_season_block.csv",
+    "note": "onshore+offshore combined"
+  },
+  "cells": [
+    {
+      "season": "DJF",
+      "block": "night",
+      "share": 0.085547
+    },
+    {
+      "season": "DJF",
+      "block": "morning",
+      "share": 0.083865
+    },
+    {
+      "season": "DJF",
+      "block": "afternoon",
+      "share": 0.08014
+    },
+    {
+      "season": "DJF",
+      "block": "evening",
+      "share": 0.088582
+    },
+    {
+      "season": "MAM",
+      "block": "night",
+      "share": 0.061518
+    },
+    {
+      "season": "MAM",
+      "block": "morning",
+      "share": 0.052055
+    },
+    {
+      "season": "MAM",
+      "block": "afternoon",
+      "share": 0.054072
+    },
+    {
+      "season": "MAM",
+      "block": "evening",
+      "share": 0.06193
+    },
+    {
+      "season": "JJA",
+      "block": "night",
+      "share": 0.043504
+    },
+    {
+      "season": "JJA",
+      "block": "morning",
+      "share": 0.037037
+    },
+    {
+      "season": "JJA",
+      "block": "afternoon",
+      "share": 0.042131
+    },
+    {
+      "season": "JJA",
+      "block": "evening",
+      "share": 0.04188
+    },
+    {
+      "season": "SON",
+      "block": "night",
+      "share": 0.069066
+    },
+    {
+      "season": "SON",
+      "block": "morning",
+      "share": 0.066154
+    },
+    {
+      "season": "SON",
+      "block": "afternoon",
+      "share": 0.062227
+    },
+    {
+      "season": "SON",
+      "block": "evening",
+      "share": 0.070294
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+# Dev / scratch — must not ship to Vercel
+node_modules/
+aspect-test-output/
+tools/
+scripts/
+docs/
+*.bak
+*-test.html
+**/*-test.html
+
+# Local Excel scratch (keep only downloads/ finals)
+*.xlsx
+!downloads/Gas_Plant_v17.xlsx
+Excel_model/
+
+# Slide authoring sources (PDF lives in downloads/)
+takeaways-slides.html
+takeaways-slides.js

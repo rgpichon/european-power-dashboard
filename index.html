@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
   <title>European Energy Dashboard</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="European Power Dashboard — Live Pricing Model &amp; Plant Economics" />
+  <meta property="og:description" content="Live interaction model of European electricity pricing, linked to a fully audited project-finance model for a 500MW gas plant." />
+  <meta property="og:image" content="https://eu-power-dashboard.vercel.app/og-image.png" />
+  <meta property="og:image:width" content="2400" />
+  <meta property="og:image:height" content="1260" />
+  <meta property="og:url" content="https://eu-power-dashboard.vercel.app/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="European Power Dashboard — Live Pricing Model &amp; Plant Economics" />
+  <meta name="twitter:description" content="Live interaction model of European electricity pricing, linked to a fully audited project-finance model for a 500MW gas plant." />
+  <meta name="twitter:image" content="https://eu-power-dashboard.vercel.app/og-image.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -183,10 +194,14 @@
     }
 
     .dash-masthead {
+      position: absolute;
+      top: 0;
+      right: 0;
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      margin: 0 0 6px;
+      margin: 0;
+      z-index: 1;
     }
 
     .dash-asof {
@@ -489,44 +504,17 @@
       text-decoration: underline;
     }
 
-    .dash-hook {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      max-width: 720px;
-      margin: 0 0 14px;
-      padding: 12px 14px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-    }
-
-    .dash-hook-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-    }
-
-    .dash-hook-stat {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      gap: 8px 14px;
-    }
-
     .dash-hook-price {
-      font-size: 22px;
+      font-size: inherit;
       font-weight: 700;
-      line-height: 1.2;
+      line-height: inherit;
       color: var(--text-primary);
       font-variant-numeric: tabular-nums;
     }
 
     .dash-hook-delta {
-      font-size: 13px;
-      font-weight: 500;
+      font-size: inherit;
+      font-weight: 400;
       color: var(--text-secondary);
     }
 
@@ -538,29 +526,32 @@
       color: var(--accent-green);
     }
 
-    .dash-hook-bar.im-state-bar {
-      min-height: 64px;
-    }
-
-    .dash-hook-bar .im-state-seg {
-      padding: 8px 10px;
-    }
-
-    .dash-hook-bar .im-state-seg-price {
-      font-size: 14px;
-    }
-
     .dash-hook-cta {
-      align-self: flex-start;
-      font-size: 13px;
+      font-size: inherit;
       font-weight: 500;
       color: var(--accent-blue);
       text-decoration: none;
-      margin-top: 2px;
     }
 
     .dash-hook-cta:hover {
       text-decoration: underline;
+    }
+
+    .dash-live-im {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.45;
+      color: var(--text-secondary);
+    }
+
+    .dash-live-im .dash-hook-price {
+      color: var(--text-primary);
+    }
+
+    .dash-live-im-sep {
+      margin: 0 0.35em;
+      color: var(--text-secondary);
     }
 
     .pillar-eyebrow {
@@ -3884,6 +3875,12 @@
         padding-right: 0;
       }
 
+      .dash-masthead {
+        position: static;
+        margin: 0 0 8px;
+        justify-content: flex-end;
+      }
+
       .dash-title-stack > .download-btn,
       #pe-explainer > .download-btn,
       #im-primary-controls > .download-btn {
@@ -4080,10 +4077,10 @@
     <!-- Dashboard -->
     <section class="tab-panel" id="panel-dashboard" role="tabpanel" aria-labelledby="tab-dashboard" data-active="true">
       <div class="dash-fold1">
-        <div class="dash-masthead">
-          <span class="dash-asof">Data as of 17 July 2026</span>
-        </div>
         <div class="dash-title-stack">
+          <div class="dash-masthead">
+            <span class="dash-asof">Data as of 17 July 2026</span>
+          </div>
           <h1 class="article-tab-title">Dashboard</h1>
           <p class="article-tab-dek">European electricity pricing, modelled live — read the argument below, then run the numbers yourself.</p>
           <p class="dash-hero-headline">Neither gas nor renewables retains durable pricing power in European electricity markets.</p>
@@ -4091,21 +4088,17 @@
           <a href="downloads/takeaways.pdf" class="download-btn download-btn--pdf" download="European-Power-Takeaways.pdf">Download the takeaways (PDF)</a>
         </div>
 
-        <div class="dash-hook">
-          <div class="dash-hook-label">Right now, in the Interaction Model</div>
-          <div class="dash-hook-stat">
+        <div class="dash-pillars-intro" id="dash-pillars-intro">
+          <p class="dash-live-im" aria-live="polite">
+            Live IM average:
             <span id="dash-hook-price" class="dash-hook-price">—</span>
             <span id="dash-hook-delta" class="dash-hook-delta">—</span>
-          </div>
-          <a href="#" class="dash-hook-cta" data-go-tab="interaction">Explore the full model →</a>
-        </div>
-
-        <div class="dash-pillars-intro" id="dash-pillars-intro">
-          <p class="pillar-headline">Renewables and gas are eroding the same price from opposite sides — and neither erosion offsets the other.</p>
+            <span class="dash-live-im-sep" aria-hidden="true">·</span>
+            <a href="#" class="dash-hook-cta" data-go-tab="interaction">Explore the full model →</a>
+          </p>
           <div class="pillar-prose">
             <p>As solar and wind capacity grows, more of it competes for the same sunny, windy hours. Each new unit pushes the price down exactly when it produces most — renewable buildout increasingly cannibalises its own revenue.</p>
-            <p>At the same time, a wave of new LNG supply is compressing what gas can charge even in the hours it still sets the price. Cheaper gas lowers the ceiling on the other side of the market.</p>
-            <p>These are two different mechanisms, not one story told twice — which is why the 2023 EU market reform, built to address short-term volatility, leaves this compounding effect largely unaddressed.</p>
+            <p>At the same time, a wave of new LNG supply is compressing what gas can charge even in the hours it still sets the price. Cheaper gas lowers the ceiling on the other side of the market — a compounding effect the 2023 EU market reform, built for short-term volatility, leaves largely unaddressed.</p>
           </div>
         </div>
 
@@ -5386,8 +5379,7 @@
             <a href="#art-s2" data-article-section="art-s2">Gas and LNG: Pricing Power and Its Limits</a>
             <a href="#art-s3" data-article-section="art-s3">Renewables: The Cannibalisation Problem</a>
             <a href="#art-s4" data-article-section="art-s4">The Interaction Model</a>
-            <a href="#art-s5" data-article-section="art-s5">Conclusion and Trade Idea</a>
-            <a href="#art-appendix" data-article-section="art-appendix">Appendix: Spark spread mechanics</a>
+            <a href="#art-s5" data-article-section="art-s5">Conclusion</a>
             <a href="#art-refs" data-article-section="art-refs">References</a>
           </nav>
 
@@ -5499,8 +5491,15 @@
             <p class="article-note">Source: IGU 2026 / article notes §2.5 · Full JKM/TTF chart lands in Gas &amp; LNG Stage 3 (§5.4).</p>
           </details>
 
+          <h3 class="article-subhead" id="art-s2-6">2.6 Spark spread mechanics and the gas plant economics</h3>
+          <p>For a standard CCGT operating at 55% thermal efficiency, a conventional reference assumption for illustrating the mechanism rather than the specific plant modelled later in this paper, which achieves a higher 65% and is analysed in full in Section 5, with a carbon intensity of 0.40 tonnes of CO₂ per MWh, the variable cost formula is:</p>
+          <p class="article-formula">Variable cost = TTF ÷ 0.55 + EUA × 0.40</p>
+          <p>At current spot TTF of approximately €52/MWh and EUA of €55/t, that yields a variable cost of roughly €94.5 + €22 = €116.5/MWh. The plant dispatches only when the electricity price clears above that level, which at current prices happens in relatively few hours. At the 2027 summer forward of €35/MWh TTF, variable cost falls to approximately €63.6 + €22 = €85.6/MWh, which makes the plant viable in more hours. At the 2029–30 summer forward of €22/MWh TTF, variable cost falls to roughly €40 + €22 = €62/MWh, cheap enough to set the electricity price in a significant share of hours.</p>
+          <p>The apparent paradox is that lower TTF improves the spark spread per running hour by reducing variable cost, while simultaneously reducing running hours as electricity prices fall with gas costs. The net effect on total annual profit is deeply negative. A plant that earned €40,000/MW net of fixed costs at 3,000 running hours and a €20/MWh spread earns approximately €7,000/MW at 1,800 running hours and a €15/MWh spread, an 83% collapse in economic profit before the full demand destruction from renewable penetration is incorporated. Fixed costs of roughly €20,000/MW per year are unchanged throughout.</p>
+          <p>The stranded asset trajectory does not require the gas plant to become technically inoperable. It requires only that its expected lifetime revenues fall below the sum of its fixed costs, a condition that is now arithmetically visible in the forward curve for merchant gas plants without long-term capacity contracts.</p>
+
           <h3 class="article-subhead" id="art-s2-7">2.7 Who holds the risk</h3>
-          <p>The structural compression of gas plant economics, LNG infrastructure returns, and utility contract books is not evenly distributed. Three groups are exposed in ways that are not yet fully reflected in asset valuations or disclosed as balance sheet risk. (Spark spread mechanics and the gas plant economics model are set out in the <a href="#art-appendix" data-article-section="art-appendix">appendix</a>.)</p>
+          <p>The structural compression of gas plant economics, LNG infrastructure returns, and utility contract books is not evenly distributed. Three groups are exposed in ways that are not yet fully reflected in asset valuations or disclosed as balance sheet risk.</p>
           <p>Gas plant equity holders are running on a trajectory of declining running hours and compressed spreads. Fixed cost recovery is increasingly dependent on capacity market payments and ancillary services revenue, neither of which is structurally sized to compensate for the full loss of merchant energy revenue at high renewable penetration. The merchant gas plant business model is structurally impaired at 50–65% renewable penetration, and European markets are approaching that range.</p>
           <p>LNG regasification infrastructure investors deployed capital at 2022–2023 throughput assumptions, when European LNG demand appeared structurally elevated. Global regasification utilisation was 39.2% in 2025, across 1,113.5 Mtpa of installed capacity, before a further 229.3 Mtpa of new terminals under construction come online. Assets with 20-year economic lives, financed on demand assumptions set at the peak of the post-Ukraine supply crisis, face the same structural revenue erosion as the gas plants they feed. The early signal is already visible: Deutsche Regas terminated the use of one FSRU at the Mukran facility in 2025 due to uncompetitively high transportation and marginal regasification costs.</p>
           <p>Utilities holding unhedged oil-indexed LNG contracts sit on a less visible but potentially larger exposure. Long-term take-or-pay contracts indexed at Brent × 12–14%, the standard structure for contracts signed at the height of the 2022–2023 supply crisis, imply a delivered cost of approximately US$10.4/MMBtu at Brent US$80/bbl. The 2029–30 TTF summer forward implies a European market clearing price of US$6–7/MMBtu. A utility locked into oil-indexed supply at US$10.4/MMBtu, selling into a market that clears at US$6–7/MMBtu, is 30–50% out of the money on a take-or-pay obligation. That exposure sits across several major European utility balance sheets and is not transparently reported as a mark-to-market liability.</p>
@@ -5648,18 +5647,29 @@
           <p>What it does not touch is the mechanism this section has spent three subsections demonstrating: gas remains the marginal price-setter across the majority of hours the model examines, the merit order is unchanged, and the compound cannibalisation-plus-TTF-suppression effect quantified in 4.3, a 47.5% price fall between 2025 and 2030 penetration, before any supply shock, occurs identically whether the reform exists or not. The reform governs who bears the revenue swing once the spot price has moved. It has no bearing on why the spot price moves the way it does. A regulator reading this model's output would find nothing in the 2024 reform that changes a single number in Section 4.3.</p>
           <p>There is a deeper version of this critique worth stating plainly, even though it runs against the reform's own stated intent. As more new-build capacity moves onto administered CfD revenue by construction, the regulation's explicit goal, a shrinking share of total generation is exposed to the marginal spot price the whole system still uses as its reference signal. A thinner spot market is a noisier investment signal, and the next generation of projects seeking financing will lean even more heavily on contracted structures precisely because the market they might otherwise reference is less informative than it used to be. Whether this becomes self-reinforcing, each successive capacity round justified partly by the previous round's success at removing supply from the price-forming market, is not something this model tests, and no serious proposal for the deeper redesigns (capacity markets, nodal pricing) that would address it directly is currently on the table in Europe. The reform solved the problem it was built to solve. It left the problem this paper is about untouched.</p>
 
-          <h2 class="section-headline" id="art-s5">5. Conclusion and Trade Idea</h2>
-          <p>Coming October 2026</p>
+          <h2 class="section-headline" id="art-s5">5. Conclusion</h2>
+          <h3 class="article-subhead" id="art-s5-1">5.1 What the model tells us</h3>
+          <p>The preceding sections have argued, in general terms, that merchant generation of either kind, gas or renewable, is becoming structurally difficult to finance as penetration rises. The plant economics model built alongside this paper, a full project-finance build for a 500MW merchant gas CCGT, priced directly against the same interaction model used in Section 4 rather than a separate assumption, converts that argument into a specific, falsifiable number, and the result is sharper than the qualitative case alone would suggest.</p>
+          <p>Priced as an existing asset already in operation, with no fresh construction financing and no project debt, the plant clears a positive equity NPV of €25.6m against the 2025 baseline price path. But equity IRR on that same cash flow is −4.8%, against a 6.0% cost of equity. The two figures are not in tension, they describe different things. The plant is worth marginally more than nothing to continue holding: whatever capital built it is sunk, and the residual cash flow it still generates has a small positive present value. But as a return on capital, it destroys value at every point across its operating life. Cash flow stays positive only through 2049, roughly two-thirds of the plant's modelled life, before degrading efficiency and rising fixed costs push it into sustained annual losses for the remainder of its tenor. This is the stranded-asset trajectory described qualitatively in Section 2.6, now expressed as a real number: not broken, structurally uneconomic on a forward-looking return basis, while remaining rational to keep running because the alternative, decommissioning a sunk asset, destroys more value than holding it.</p>
+          <p>Priced instead as new construction, financed with the phased capital draws, capitalised interest, and 60% leverage a real project would actually carry, the same plant is decisively unbankable. Equity NPV is −€482.9m. Minimum DSCR is −0.12x against a 1.20x covenant, not a marginal breach but a structural one: the project generates negative cash available for debt service in its worst year, and equity IRR is undefined because the cash flow never turns net positive across the full tenor. Debt service is a bullet in practice rather than an amortising schedule, none of the thirty pre-balloon years carry any scheduled principal, with the entire €327.7m obligation deferred to a single repayment at maturity the project's own cash flow gives no indication of being able to make.</p>
+          <p>The sensitivity analysis run against the operating case is the third result, and it is the one that most directly challenges the intuitive framing of this risk. Six levers were tested independently: fixed operating cost, plant efficiency, annual efficiency degradation, a gas price shock, a shift in how often gas sets the price, and leverage. Efficiency and degradation move the outcome further than any other lever, a two-point swing in nameplate efficiency moves cumulative cash to equity by more than €250m, and a faster degradation path alone is enough to erase the entire positive base case. Fixed operating cost matters almost as much: a €5,000/MW/year increase, well within the range of realistic maintenance cost inflation, cuts the base case by two-thirds. Gas price and gas-share shocks, the variables most commentary on this market treats as the central risk, move the outcome by comparatively less, and in the direction opposite to what a reader trained on Section 2's stranded-asset argument might expect: a higher gas price improves this specific plant's position, because it is more fuel-efficient than the reference marginal plant setting the market price in gas hours, so a rising gas cost widens its margin relative to the plant it is competing against. Leverage, tested only in the construction case since it is structurally irrelevant to an already-operating, debt-free asset, does not rescue the outcome at any tested level from 40% to 80%: DSCR stays broken across the entire range. This is not a capital-structure problem that better financing terms can solve. It is a cash-generation problem, and the model's own sensitivity output says so more precisely than the qualitative argument in Sections 2 and 3 could establish alone.</p>
 
-          <h2 class="section-headline" id="art-appendix">Appendix</h2>
-          <details class="article-details">
-            <summary>2.6 Spark spread mechanics and the gas plant economics</summary>
-            <p class="body-text" style="margin-top: 8px;">A gas plant's entire economic case reduces to one number: the spark spread, defined as the electricity price minus the variable cost of generation. For a standard CCGT at 58% thermal efficiency (the Interaction Model's ≥2021 fleet assumption), with electrical CO₂ intensity EF/η = 0.348207 tCO₂/MWh<sub>e</sub> (thermal EF 0.20196 t/MWh<sub>th</sub> ÷ 0.58), the variable cost formula is:</p>
-            <p class="article-formula">Variable cost = TTF ÷ 0.58 + EUA × 0.348207</p>
-            <p class="body-text">At the locked 17 July 2026 spot TTF of €52/MWh and Dec-26 EUA of €79.11/t, that yields a variable cost of €89.66 + €27.55 = €117.20/MWh. The plant dispatches only when the electricity price clears above that level, which at current prices happens in relatively few hours. At the 2027 summer TTF forward of €35/MWh with Dec-27 EUA at €81.89/t (ICE Endex, same 17 July 2026 lock), variable cost is €60.34 + €28.51 = €88.85/MWh. At the 2030 summer TTF forward of €22/MWh with Dec-30 EUA at €91.43/t, variable cost is €37.93 + €31.84 = €69.77/MWh, cheap enough to set the electricity price in a significant share of hours.</p>
-            <p class="body-text">The apparent paradox is that lower TTF improves the spark spread per running hour by reducing variable cost, while simultaneously reducing running hours as electricity prices fall with gas costs. The net effect on total annual profit is deeply negative. A plant that earned €40,000/MW net of fixed costs at 3,000 running hours and a €20/MWh spread earns approximately €7,000/MW at 1,800 running hours and a €15/MWh spread, an 83% collapse in economic profit before the full demand destruction from renewable penetration is incorporated. Fixed costs of roughly €20,000/MW per year are unchanged throughout.</p>
-            <p class="body-text">The stranded asset trajectory does not require the gas plant to become technically inoperable. It requires only that its expected lifetime revenues fall below the sum of its fixed costs, a condition that is now arithmetically visible in the forward curve for merchant gas plants without long-term capacity contracts.</p>
-          </details>
+          <h3 class="article-subhead" id="art-s5-2">5.2 Who is positioned and who isn't</h3>
+          <p>The asymmetry between the two financing cases sorts market participants cleanly, and the sort is not the one most coverage of this market assumes.</p>
+          <p>Owners of existing, already-depreciated merchant gas capacity are better positioned than the stranded-asset framing in Section 2 might suggest in isolation. Sunk construction cost is doing real work in the operating case's positive NPV: the same asset, financed today from scratch, fails outright. Integrated utilities holding generation alongside retail supply have a further partial offset the standalone model does not capture, a lower wholesale price that erodes generation margin simultaneously improves retail margin on the other side of the book. Developers and utilities with substantial CfD or long-dated PPA coverage, Ørsted, RWE, Vattenfall among the larger European players, are insulated from the cannibalisation dynamic on covered volumes for the contract term, with their remaining exposure concentrated in cost overrun and construction risk rather than the revenue risk this model quantifies.</p>
+          <p>Exposed positions cluster on the new-build and uncontracted side of the same asset classes. New merchant gas capacity, priced exactly as this model prices it, does not clear a financeable return under the price path this paper has established as the central case, not a downside scenario. Gas plant equity holding merchant tail exposure beyond an existing contract term faces the same arithmetic once that contract expires. LNG regasification infrastructure financed on the 2022–2023 throughput assumptions described in Section 2.7 carries a related but distinct exposure, capacity utilisation, not generation margin, but the underlying cause, demand assumptions calibrated to a supply crisis rather than the structural path this model implies, is the same. Merchant renewable developers without CfD or PPA coverage face the DSCR cliff quantified directly in Section 3.6. Equity holders in listed developers whose disclosed NAV assumptions embed a captured-price trajectory above what this paper's interaction model implies are carrying a valuation gap the market has not yet been forced to close.</p>
+
+          <h3 class="article-subhead" id="art-s5-3">5.3 What this means in practice</h3>
+          <p>The practical value of this analysis is not a single market call but a reordering of what actually deserves underwriting attention. The sensitivity results in 5.1 invert the risk hierarchy most financing and investment discussions currently apply to merchant generation. Gas price and gas-share exposure, the variables that dominate commentary on this market and the ones a term sheet is most likely to negotiate covenants around, move this project's outcome by less than either its own operating efficiency or its degradation profile. A lender or equity investor spending diligence effort stress-testing commodity price paths while treating plant-level operating assumptions as fixed inputs is underwriting the wrong risk. The efficiency and degradation figures a technical advisor signs off on, not the gas price deck a trading desk provides, are what should decide whether a specific merchant gas asset clears its cost of capital.</p>
+          <p>The asymmetry in 5.1 between the operating and construction cases carries a second, more structural implication for how new capacity gets financed at all. An asset that clears a positive, if unremarkable, valuation once it already exists and is decisively unbankable to build from the same starting price path is not a financing problem a different capital structure solves, the leverage sensitivity in 5.1 already rules that out. It is a statement that new merchant generation, gas or renewable, needs contracted revenue in place before construction financing is sought, not as a risk-mitigation preference lenders might waive for a strong sponsor, but as the condition that determines whether the deal exists at all. Every merchant developer or gas plant sponsor currently modelling a construction-phase project against a spot-price forecast should ask whether that forecast, run through a model structured the way this one is, still produces a bankable DSCR, and should treat a negative answer as informative rather than as a reason to adjust the discount rate until it isn't.</p>
+          <p>Both the interaction model and the plant economics model built for this paper are available to test directly, rather than taken on the authority of the numbers printed here. A reader with a different view on renewable buildout, gas supply, or a specific plant's own cost assumptions can substitute those assumptions and see where the conclusion changes, and where it does not. That the leverage and gas-price sensitivities move the outcome by less than a reader might expect, while efficiency and degradation move it by more, is a claim worth verifying against a reader's own priors rather than accepting on the strength of this paper's presentation of it.</p>
+
+          <h3 class="article-subhead" id="art-s5-4">5.4 Limitations and further research</h3>
+          <p>Three limitations are worth stating plainly rather than leaving implicit. The interaction model in Section 4 is calibrated to Germany, chosen for data richness rather than representativeness, and the Zakeri et al. dispersion cited in Section 4.1, gas setting the price in over 80% of hours in some markets against a far lower share in others, means a French, Spanish, or British reader should expect this paper's specific numbers to shift, even where the underlying mechanism holds. The plant economics model's operating case treats the plant as already built, with construction financing either fully phased and debt-financed or entirely absent, rather than modelling a real secondary-market acquisition transaction, a simplification that understates the transaction costs a real buyer of an existing asset would face without changing the underlying cash flow conclusion. Neither model endogenises gas plant retirement: as merchant economics deteriorate, capacity exit should tighten residual supply and partially offset the price compression this paper documents, meaning the compound effect quantified in Section 4.3 may be modestly overstated at the highest penetration levels, and the pace of demand-side flexibility deployment, storage, electrified heat, hydrogen, that could floor negative-price hours faster than assumed here is genuinely uncertain and not modelled at all.</p>
+          <p>Each of these is a direction for further work rather than a reason to discount the central finding: country-level disaggregation for France, Spain, and the UK; a closed-loop version of the interaction model incorporating retirement; and empirical validation against realised Spanish and German data, where the cannibalisation signal Section 3 documents is already detectable in live market data rather than model output.</p>
+
+          <h3 class="article-subhead" id="art-s5-5">5.5 Closing statement</h3>
+          <p>The European electricity market is undergoing a structural transition that existing pricing mechanisms, and most of the financial models built around them, have not caught up to. The 2023 reform addressed the distribution of windfall revenue in a high-gas-price environment; it left the marginal pricing mechanism, and the compounding of direct cannibalisation with indirect TTF suppression, entirely unchanged. This paper's own project-finance model shows what that means in practice for a real asset rather than a stylised one: a plant that is worth holding once it already exists, and cannot be financed if it does not. As penetration continues toward the levels this paper has modelled, contracted revenue, CfDs, PPAs, long-term offtake, stops being a preference and becomes the only structure new merchant infrastructure can be built on, and the valuation gap between assets that have that protection and assets that do not will keep widening.</p>
 
           <h2 class="section-headline" id="art-refs">References</h2>
           <p class="ref-group">Academic</p>
